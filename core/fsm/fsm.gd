@@ -25,7 +25,7 @@ func transition_to(state_name: String) -> void:
 		return
 	
 	current_state.exit_state()
-	current_state = get_node(initial_state)
+	current_state = get_node(state_name)
 	current_state.enter_state()
 	
 	on_state_transitioned.emit(state_name)
