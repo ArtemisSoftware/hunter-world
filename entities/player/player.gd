@@ -1,5 +1,18 @@
-extends CharacterBody2D
+class_name Player extends CharacterBody2D
 
+
+@export_group("Stats")
+@export var max_health: float = 10.0
+@export var max_mana: float = 10.0
+@export var move_speed: float = 60.0
+@export var damage: float = 5.0
+@export var critical_chance: float = 0.0
+@export var critical_damage: float = 0.0
+
+
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+
+var last_direction: String = "down"	
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
