@@ -12,11 +12,15 @@ class_name Player extends CharacterBody2D
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var fsm: FSM = $FSM
+@onready var health: Health = $Components/Health
+@onready var mana: Mana = $Components/Mana
 
 var last_direction: String = "down"	
+var current_mana: float = 0.0
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+func _ready() -> void:
+	pass
+
 
 # process logic every frame
 func _process(delta: float) -> void:
@@ -25,7 +29,31 @@ func _process(delta: float) -> void:
 		fsm.current_state.process_state(delta)
 	
 	pass
+
+func set_up() -> void:
+	reset_health()
+	reset_mana()
+	pass	
+
+func reset_health() -> void:
+	health.setup(max_health)
+	EventBus.on_player_health_updated.emit(max_health, max_health)
+	pass
 	
+func reset_mana() -> void:
+	mana.setup(max_mana)
+	EventBus.on_player_mana_updated.emit(max_mana, max_mana)
+	pass	
+	
+func use_mana(value: float) -> void:
+	mana.use_mana(value)
+	EventBus.on_player_mana_updated.emit(mana.current_mana, max_mana)
+	pass		
+			
+#----------------------------
+############# MOVEMENT	
+#----------------------------
+
 	
 func is_moving() -> bool:
 	var 	move_input = ["move_down", "move_up", "move_left", "move_right"]
@@ -50,4 +78,8 @@ func update_direction(input_vector: Vector2) -> void:
 func play_direction_animation(animation_name: String) -> void:
 	animated_sprite_2d.play("%s_%s" % [animation_name, last_direction])
 	pass	
+	
+	
+	
+	
 		

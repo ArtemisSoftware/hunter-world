@@ -8,6 +8,8 @@
 [ext_resource type="Script" uid="uid://chde0iby8c3m4" path="res://entities/player/states/player_state_idle.gd" id="6_8fjmc"]
 [ext_resource type="Script" uid="uid://dpmds8p8s2yue" path="res://entities/player/player_state_walk.gd" id="7_26q78"]
 [ext_resource type="Script" uid="uid://8wqsa688mljc" path="res://entities/player/player_state_attack.gd" id="8_bectd"]
+[ext_resource type="PackedScene" uid="uid://bj8i27kk1yq5j" path="res://core/components/health.tscn" id="9_bectd"]
+[ext_resource type="PackedScene" uid="uid://c0xkxj1tdcbrm" path="res://core/components/mana.tscn" id="10_wvtmh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8fjmc"]
 atlas = ExtResource("2_bls4j")
@@ -206,8 +208,10 @@ texture = ExtResource("1_sglur")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2046901049]
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_wuv6x")
-animation = &"walk_up"
+animation = &"walk_down"
 autoplay = "idle_down"
+frame = 2
+frame_progress = 0.19499762
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2089891494]
 position = Vector2(0, -7)
@@ -228,3 +232,9 @@ script = ExtResource("7_26q78")
 
 [node name="Attack" type="Node" parent="FSM" unique_id=1128685775]
 script = ExtResource("8_bectd")
+
+[node name="Components" type="Node" parent="." unique_id=960720734]
+
+[node name="Health" parent="Components" unique_id=622829099 instance=ExtResource("9_bectd")]
+
+[node name="Mana" parent="Components" unique_id=767299983 instance=ExtResource("10_wvtmh")]
