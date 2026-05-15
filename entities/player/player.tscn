@@ -294,6 +294,7 @@ script = ExtResource("8_bectd")
 [node name="Exp" parent="Components" unique_id=1532371733 instance=ExtResource("11_7thud")]
 
 [node name="Weapon" type="Node2D" parent="." unique_id=1407130220]
+visible = false
 position = Vector2(-12, -10)
 
 [node name="Sprite2D" type="Sprite2D" parent="Weapon" unique_id=1510068888]
@@ -303,6 +304,7 @@ texture = ExtResource("13_afbqv")
 [node name="EnemyAttackArea" type="Area2D" parent="Weapon" unique_id=1462506008]
 collision_layer = 0
 collision_mask = 4
+monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Weapon/EnemyAttackArea" unique_id=311061461]
 position = Vector2(0, -14.5)

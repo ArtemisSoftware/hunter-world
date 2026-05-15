@@ -5,7 +5,7 @@ var fsm: FSM
 func enter_state() -> void:
 	pass
 	
-func process_state(delata: float) -> void:
+func process_state(delta: float) -> void:
 	pass	
 	
 	

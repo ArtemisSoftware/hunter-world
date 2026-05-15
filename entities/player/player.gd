@@ -18,6 +18,9 @@ class_name Player extends CharacterBody2D
 @onready var health: Health = $Components/Health
 @onready var mana: Mana = $Components/Mana
 @onready var exp: Experience = $Components/Exp
+@onready var enemy_attack_area: Area2D = $Weapon/EnemyAttackArea
+@onready var weapon: Node2D = $Weapon
+
 
 @onready var attack_positions: Dictionary = {
 	"down": %"Down Marker2D",
@@ -75,7 +78,14 @@ func add_exp(value: float) -> void:
 	exp.add_exp(value)
 	EventBus.on_player_stats_updated.emit()	
 	pass	
+	
+#----------------------------
+############# ATTACK	
+#----------------------------	
 
+func enable_weapon_collision(isMonotoring: bool) -> void:
+	enemy_attack_area.monitoring = isMonotoring
+	pass
 			
 #----------------------------
 ############# MOVEMENT	
