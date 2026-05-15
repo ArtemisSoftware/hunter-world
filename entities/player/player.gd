@@ -9,17 +9,30 @@ class_name Player extends CharacterBody2D
 @export var critical_chance: float = 0.0
 @export var critical_damage: float = 0.0
 
+@export_group("Experience")
+@export var base_exp: float = 100.0
+@export var exp_multiplier: float = 2.0
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var fsm: FSM = $FSM
 @onready var health: Health = $Components/Health
 @onready var mana: Mana = $Components/Mana
+@onready var exp: Experience = $Components/Exp
+
 
 var last_direction: String = "down"	
-var current_mana: float = 0.0
+
+
 
 func _ready() -> void:
+	set_up()
 	pass
+	
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_accept"):
+		exp.add_exp(10)
+		
+	pass	
 
 
 # process logic every frame
@@ -33,6 +46,7 @@ func _process(delta: float) -> void:
 func set_up() -> void:
 	reset_health()
 	reset_mana()
+	exp.setup(base_exp, exp_multiplier)
 	pass	
 
 func reset_health() -> void:
@@ -49,6 +63,12 @@ func use_mana(value: float) -> void:
 	mana.use_mana(value)
 	EventBus.on_player_mana_updated.emit(mana.current_mana, max_mana)
 	pass		
+	
+func add_exp(value: float) -> void:
+	exp.add_exp(value)
+	EventBus.on_player_stats_updated.emit()	
+	pass	
+
 			
 #----------------------------
 ############# MOVEMENT	

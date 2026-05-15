@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://8wqsa688mljc" path="res://entities/player/player_state_attack.gd" id="8_bectd"]
 [ext_resource type="PackedScene" uid="uid://bj8i27kk1yq5j" path="res://core/components/health.tscn" id="9_bectd"]
 [ext_resource type="PackedScene" uid="uid://c0xkxj1tdcbrm" path="res://core/components/mana.tscn" id="10_wvtmh"]
+[ext_resource type="PackedScene" uid="uid://7itygyci13kv" path="res://entities/player/components/exp.tscn" id="11_7thud"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8fjmc"]
 atlas = ExtResource("2_bls4j")
@@ -238,3 +239,5 @@ script = ExtResource("8_bectd")
 [node name="Health" parent="Components" unique_id=622829099 instance=ExtResource("9_bectd")]
 
 [node name="Mana" parent="Components" unique_id=767299983 instance=ExtResource("10_wvtmh")]
+
+[node name="Exp" parent="Components" unique_id=1532371733 instance=ExtResource("11_7thud")]
