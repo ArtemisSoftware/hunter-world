@@ -19,6 +19,13 @@ class_name Player extends CharacterBody2D
 @onready var mana: Mana = $Components/Mana
 @onready var exp: Experience = $Components/Exp
 
+@onready var attack_positions: Dictionary = {
+	"down": %"Down Marker2D",
+	"up": %"Up Marker2D4",
+	"left": %"Left Marker2D",
+	"right": %"Right Marker2D"
+}
+
 
 var last_direction: String = "down"	
 
