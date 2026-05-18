@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bhrer81783ggd"]
 
 [ext_resource type="PackedScene" uid="uid://dla1pm4heubp0" path="res://hud/loadout/inventory_panel.tscn" id="1_jbufo"]
+[ext_resource type="PackedScene" uid="uid://cd6tubxmsqcio" path="res://hud/loadout/equipment_panel.tscn" id="2_yhlwp"]
 
 [node name="Loadout" type="HBoxContainer" unique_id=745715130]
 custom_minimum_size = Vector2(442, 332)
@@ -19,4 +20,7 @@ theme_override_constants/separation = 12
 alignment = 2
 
 [node name="InventoryPanel" parent="." unique_id=560443786 instance=ExtResource("1_jbufo")]
+layout_mode = 2
+
+[node name="EquipmentPanel" parent="." unique_id=20346764 instance=ExtResource("2_yhlwp")]
 layout_mode = 2

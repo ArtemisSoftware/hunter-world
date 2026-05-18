@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://bmc07yfl6mhuk"]
+
+[ext_resource type="Script" uid="uid://bqjuuy1a6gxsn" path="res://hud/components/equipment_slot.gd" id="1_v18g5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e0oxb"]
+bg_color = Color(0.21960784, 0.23137255, 0.2901961, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.5921569, 0.5921569, 0.5921569, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m8a55"]
+bg_color = Color(0.16871274, 0.17840454, 0.22695181, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.5921569, 0.5921569, 0.5921569, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0kfig"]
+bg_color = Color(0.29084164, 0.30530038, 0.37731123, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.5921569, 0.5921569, 0.5921569, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="EquipmentSlot" type="Button" unique_id=30661380]
+custom_minimum_size = Vector2(40, 40)
+theme_override_styles/normal = SubResource("StyleBoxFlat_e0oxb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_m8a55")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0kfig")
+script = ExtResource("1_v18g5")
