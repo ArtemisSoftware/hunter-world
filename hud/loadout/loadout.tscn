@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bhrer81783ggd"]
+
+[ext_resource type="PackedScene" uid="uid://dla1pm4heubp0" path="res://hud/loadout/inventory_panel.tscn" id="1_jbufo"]
+
+[node name="Loadout" type="HBoxContainer" unique_id=745715130]
+custom_minimum_size = Vector2(442, 332)
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -466.0
+offset_top = -420.0
+offset_right = -24.0
+offset_bottom = -88.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/separation = 12
+alignment = 2
+
+[node name="InventoryPanel" parent="." unique_id=560443786 instance=ExtResource("1_jbufo")]
+layout_mode = 2

@@ -8,6 +8,7 @@
 [ext_resource type="StyleBox" uid="uid://b0xdjygn78msf" path="res://hud/styles/button_pressed_style.tres" id="3_qv4qp"]
 [ext_resource type="Texture2D" uid="uid://cpaqsx8rm1f6q" path="res://hud/sprites/Rune.png" id="4_0ivg5"]
 [ext_resource type="StyleBox" uid="uid://dw4nlyw5mxr7o" path="res://hud/styles/button_hover_style.tres" id="4_sh35x"]
+[ext_resource type="PackedScene" uid="uid://bhrer81783ggd" path="res://hud/loadout/loadout.tscn" id="9_qv4qp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1kkc0"]
 bg_color = Color(0.14901961, 0.16470589, 0.20784314, 1)
@@ -157,6 +158,10 @@ grow_vertical = 2
 texture = ExtResource("4_0ivg5")
 expand_mode = 1
 stretch_mode = 5
+
+[node name="Loadout" parent="." unique_id=745715130 instance=ExtResource("9_qv4qp")]
+offset_top = -440.0
+offset_bottom = -108.0
 
 [connection signal="pressed" from="Actions/MarginContainer/HBoxContainer/EquipmentButton" to="." method="_on_equipment_button_pressed"]
 [connection signal="pressed" from="Actions/MarginContainer/HBoxContainer/InventoryButton" to="." method="_on_inventory_button_pressed"]

@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bclukvvchgohb"]
+
+[ext_resource type="StyleBox" uid="uid://cgfo1wah5kq7n" path="res://hud/styles/empty_slot.tres" id="1_vqdyf"]
+[ext_resource type="Script" uid="uid://x1r52q7srw4l" path="res://hud/components/slot.gd" id="2_lvcgg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lvcgg"]
+bg_color = Color(0.38039216, 0.39215687, 0.4392157, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oi5lm"]
+bg_color = Color(0.38039216, 0.39215687, 0.4392157, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="Slot" type="Button" unique_id=1217794321]
+custom_minimum_size = Vector2(35, 35)
+theme_override_styles/normal = ExtResource("1_vqdyf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_lvcgg")
+theme_override_styles/hover = SubResource("StyleBoxFlat_oi5lm")
+script = ExtResource("2_lvcgg")
