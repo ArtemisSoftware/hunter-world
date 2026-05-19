@@ -1,0 +1,131 @@
+[gd_scene format=3 uid="uid://bifs3wuod4544"]
+
+[ext_resource type="Script" uid="uid://2fl3gkmccmom" path="res://hud/player_hud.gd" id="1_yirs3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_girky"]
+bg_color = Color(0.25882354, 0.05882353, 0.011764706, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yirs3"]
+bg_color = Color(0.77254903, 0.2509804, 0.105882354, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.25882354, 0.05882353, 0.011764706, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uo4yc"]
+bg_color = Color(0.015686275, 0.12941177, 0.2, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_msh7k"]
+bg_color = Color(0.14509805, 0.48235294, 0.68235296, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.015686275, 0.12941177, 0.2, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r003q"]
+bg_color = Color(0.015686275, 0.15686275, 0.07058824, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0la6b"]
+bg_color = Color(0.11372549, 0.5372549, 0.3019608, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.015686275, 0.15686275, 0.07058824, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="PlayerHud" type="HBoxContainer" unique_id=1669498019]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 60.0
+grow_horizontal = 2
+script = ExtResource("1_yirs3")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=431811742]
+layout_mode = 2
+
+[node name="HealthBar" type="ProgressBar" parent="VBoxContainer" unique_id=1254522200]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 28)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_girky")
+theme_override_styles/fill = SubResource("StyleBoxFlat_yirs3")
+max_value = 1.0
+step = 0.001
+value = 0.5
+show_percentage = false
+
+[node name="HealthLabel" type="Label" parent="VBoxContainer/HealthBar" unique_id=1220370671]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "20/20"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ManaBar" type="ProgressBar" parent="VBoxContainer" unique_id=1700303955]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 28)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_uo4yc")
+theme_override_styles/fill = SubResource("StyleBoxFlat_msh7k")
+max_value = 1.0
+step = 0.001
+value = 0.5
+show_percentage = false
+
+[node name="ManaLabel" type="Label" parent="VBoxContainer/ManaBar" unique_id=1657676613]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "20/20"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ExpBar" type="ProgressBar" parent="." unique_id=738042647]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(700, 28)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/background = SubResource("StyleBoxFlat_r003q")
+theme_override_styles/fill = SubResource("StyleBoxFlat_0la6b")
+max_value = 1.0
+step = 0.001

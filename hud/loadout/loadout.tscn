@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bhrer81783ggd"]
 
 [ext_resource type="PackedScene" uid="uid://dla1pm4heubp0" path="res://hud/loadout/inventory_panel.tscn" id="1_jbufo"]
+[ext_resource type="Script" uid="uid://bfmgf4y8ijmoi" path="res://hud/loadout/loadout.gd" id="1_tuqlg"]
 [ext_resource type="PackedScene" uid="uid://cd6tubxmsqcio" path="res://hud/loadout/equipment_panel.tscn" id="2_yhlwp"]
 [ext_resource type="PackedScene" uid="uid://312aq4uyn1qq" path="res://hud/loadout/stats_panel.tscn" id="3_x7ly8"]
 [ext_resource type="PackedScene" uid="uid://bj31m6e3ixt6n" path="res://hud/loadout/skills_panel.tscn" id="4_o7ca2"]
@@ -20,15 +21,20 @@ grow_horizontal = 0
 grow_vertical = 0
 theme_override_constants/separation = 12
 alignment = 2
-
-[node name="InventoryPanel" parent="." unique_id=560443786 instance=ExtResource("1_jbufo")]
-layout_mode = 2
+script = ExtResource("1_tuqlg")
 
 [node name="EquipmentPanel" parent="." unique_id=20346764 instance=ExtResource("2_yhlwp")]
+visible = false
+layout_mode = 2
+
+[node name="InventoryPanel" parent="." unique_id=560443786 instance=ExtResource("1_jbufo")]
+visible = false
 layout_mode = 2
 
 [node name="StatsPanel" parent="." unique_id=345648110 instance=ExtResource("3_x7ly8")]
+visible = false
 layout_mode = 2
 
 [node name="SkillsPanel" parent="." unique_id=1974587092 instance=ExtResource("4_o7ca2")]
+visible = false
 layout_mode = 2

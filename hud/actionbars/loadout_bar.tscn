@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://c20uln2toyivi"]
 
+[ext_resource type="Script" uid="uid://cyyy0opar6ojx" path="res://hud/actionbars/loadout_bar.gd" id="1_8y8ci"]
 [ext_resource type="StyleBox" uid="uid://c1xotqxkux7kf" path="res://hud/styles/button_style.tres" id="1_h3sau"]
 [ext_resource type="StyleBox" uid="uid://b0xdjygn78msf" path="res://hud/styles/button_pressed_style.tres" id="2_8y8ci"]
 [ext_resource type="StyleBox" uid="uid://dw4nlyw5mxr7o" path="res://hud/styles/button_hover_style.tres" id="3_s0dau"]
@@ -33,6 +34,7 @@ offset_bottom = -30.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_1kkc0")
+script = ExtResource("1_8y8ci")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=493274005]
 layout_mode = 1

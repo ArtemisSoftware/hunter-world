@@ -1,6 +1,8 @@
 [gd_scene format=4 uid="uid://bj71vyuahsr27"]
 
+[ext_resource type="Script" uid="uid://v3sdjsbmmwqa" path="res://world/town/town.gd" id="1_aoqta"]
 [ext_resource type="Texture2D" uid="uid://ci07dmdcnsxad" path="res://world/sprites/TilesetFloor.png" id="1_j8u2a"]
+[ext_resource type="PackedScene" uid="uid://b4ohn850k650g" path="res://entities/player/player.tscn" id="2_282io"]
 [ext_resource type="Texture2D" uid="uid://18drgyphc5ya" path="res://world/sprites/TilesetInteriorFloor.png" id="2_mxda2"]
 [ext_resource type="Texture2D" uid="uid://bpved2ojlem54" path="res://world/sprites/TilesetWater.png" id="3_iqg8m"]
 [ext_resource type="Texture2D" uid="uid://bysnuxdu1wlks" path="res://world/sprites/TilesetElement.png" id="3_yxohw"]
@@ -3552,6 +3554,8 @@ physics_layer_0/collision_mask = 2
 sources/0 = SubResource("TileSetAtlasSource_mtj1y")
 
 [node name="Town" type="Node2D" unique_id=1663764443]
+script = ExtResource("1_aoqta")
+player_scene = ExtResource("2_282io")
 
 [node name="Terrain" type="Node2D" parent="." unique_id=28925091]
 

@@ -57,6 +57,8 @@ func set_up() -> void:
 	reset_health()
 	reset_mana()
 	exp.setup(base_exp, exp_multiplier)
+	exp.on_next_level.connect(EventBus.on_player_new_level.emit)
+	exp.on_experience_updated.connect(EventBus.on_player_stats_updated.emit)
 	pass	
 
 func reset_health() -> void:
@@ -73,11 +75,7 @@ func use_mana(value: float) -> void:
 	mana.use_mana(value)
 	EventBus.on_player_mana_updated.emit(mana.current_mana, max_mana)
 	pass		
-	
-func add_exp(value: float) -> void:
-	exp.add_exp(value)
-	EventBus.on_player_stats_updated.emit()	
-	pass	
+
 	
 #----------------------------
 ############# ATTACK	

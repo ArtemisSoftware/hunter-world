@@ -21,7 +21,7 @@ func add_exp(value: float) -> void:
 	while current_exp >= next_level_exp:
 		_level_up()
 		
-	on_experience_updated.emit()	
+	on_next_level.emit(current_exp, next_level_exp)	
 	pass		
 
 func _level_up() -> void:
@@ -29,5 +29,7 @@ func _level_up() -> void:
 	current_level += 1
 	current_points += 4
 	next_level_exp *= exp_multiplier
-	on_next_level.emit(current_exp, next_level_exp)	
+	on_experience_updated.emit()	
 	pass	
+	
+	
