@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://cpi22efxvf5d0"]
+
+[ext_resource type="PackedScene" uid="uid://bf1f5qtgsggih" path="res://hud/components/equipped_skill_button.tscn" id="1_jrr7c"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1kkc0"]
+bg_color = Color(0.14901961, 0.16470589, 0.20784314, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[node name="SkillBar" type="Panel" unique_id=776008566]
+custom_minimum_size = Vector2(234, 66)
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -254.0
+offset_top = -96.0
+offset_right = -20.0
+offset_bottom = -30.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_1kkc0")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=493274005]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=747195148]
+layout_mode = 2
+alignment = 1
+
+[node name="EquippedSkillButton" parent="MarginContainer/HBoxContainer" unique_id=367094106 instance=ExtResource("1_jrr7c")]
+layout_mode = 2
+index_number = 1
+
+[node name="EquippedSkillButton2" parent="MarginContainer/HBoxContainer" unique_id=1557269063 instance=ExtResource("1_jrr7c")]
+layout_mode = 2
+index_number = 2
+
+[node name="EquippedSkillButton3" parent="MarginContainer/HBoxContainer" unique_id=2127092158 instance=ExtResource("1_jrr7c")]
+layout_mode = 2
+index_number = 3
+
+[node name="EquippedSkillButton4" parent="MarginContainer/HBoxContainer" unique_id=1804821391 instance=ExtResource("1_jrr7c")]
+layout_mode = 2
+index_number = 4

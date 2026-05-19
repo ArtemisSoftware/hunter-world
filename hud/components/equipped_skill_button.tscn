@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://bf1f5qtgsggih"]
+
+[ext_resource type="Texture2D" uid="uid://v5qvkilqtpml" path="res://hud/sprites/Rain.png" id="1_owg8u"]
+[ext_resource type="Script" uid="uid://d1k1ou4c0oyox" path="res://hud/components/equipped_skill_button.gd" id="1_x8vpj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_a51n5"]
+font_size = 18
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[node name="EquippedSkillButton" type="Button" unique_id=367094106]
+custom_minimum_size = Vector2(50, 50)
+flat = true
+script = ExtResource("1_x8vpj")
+
+[node name="EmptyPanel" type="Panel" parent="." unique_id=491304048]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SkillIcon" type="TextureRect" parent="." unique_id=650237440]
+visible = false
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_owg8u")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="." unique_id=901723334]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -15.0
+offset_top = -26.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "1"
+label_settings = SubResource("LabelSettings_a51n5")
+horizontal_alignment = 2

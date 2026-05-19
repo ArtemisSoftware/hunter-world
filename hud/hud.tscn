@@ -1,169 +1,23 @@
 [gd_scene format=3 uid="uid://b5qmx2uhtnnxc"]
 
 [ext_resource type="Script" uid="uid://bkmtvcgf6xopr" path="res://hud/hud.gd" id="1_svhta"]
-[ext_resource type="Texture2D" uid="uid://cwyygerknuxfo" path="res://hud/sprites/Axe.png" id="1_w8tcp"]
-[ext_resource type="StyleBox" uid="uid://c1xotqxkux7kf" path="res://hud/styles/button_style.tres" id="2_1kkc0"]
-[ext_resource type="Texture2D" uid="uid://dfq1ogevd4gdm" path="res://hud/sprites/Bag.png" id="2_svhta"]
-[ext_resource type="Texture2D" uid="uid://dhr7fuvbjj5om" path="res://hud/sprites/Scroll.png" id="3_fjv1a"]
-[ext_resource type="StyleBox" uid="uid://b0xdjygn78msf" path="res://hud/styles/button_pressed_style.tres" id="3_qv4qp"]
-[ext_resource type="Texture2D" uid="uid://cpaqsx8rm1f6q" path="res://hud/sprites/Rune.png" id="4_0ivg5"]
-[ext_resource type="StyleBox" uid="uid://dw4nlyw5mxr7o" path="res://hud/styles/button_hover_style.tres" id="4_sh35x"]
+[ext_resource type="PackedScene" uid="uid://c20uln2toyivi" path="res://hud/actionbars/loadout_bar.tscn" id="2_318vg"]
+[ext_resource type="PackedScene" uid="uid://cpi22efxvf5d0" path="res://hud/actionbars/skill_bar.tscn" id="4_w8tcp"]
 [ext_resource type="PackedScene" uid="uid://bhrer81783ggd" path="res://hud/loadout/loadout.tscn" id="9_qv4qp"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1kkc0"]
-bg_color = Color(0.14901961, 0.16470589, 0.20784314, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
 
 [node name="HUD" type="CanvasLayer" unique_id=73779187]
 script = ExtResource("1_svhta")
 
-[node name="Actions" type="Panel" parent="." unique_id=1178986880]
-custom_minimum_size = Vector2(234, 66)
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -254.0
-offset_top = -96.0
-offset_right = -20.0
-offset_bottom = -30.0
-grow_horizontal = 0
-grow_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_1kkc0")
-
-[node name="MarginContainer" type="MarginContainer" parent="Actions" unique_id=1617421237]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 8
-theme_override_constants/margin_top = 8
-theme_override_constants/margin_right = 8
-theme_override_constants/margin_bottom = 8
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Actions/MarginContainer" unique_id=420082874]
-layout_mode = 2
-alignment = 1
-
-[node name="EquipmentButton" type="Button" parent="Actions/MarginContainer/HBoxContainer" unique_id=1965419184]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-size_flags_vertical = 4
-theme_override_styles/normal = ExtResource("2_1kkc0")
-theme_override_styles/pressed = ExtResource("3_qv4qp")
-theme_override_styles/hover = ExtResource("4_sh35x")
-
-[node name="Icon" type="TextureRect" parent="Actions/MarginContainer/HBoxContainer/EquipmentButton" unique_id=675898195]
-custom_minimum_size = Vector2(28, 28)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -14.0
-offset_top = -14.0
-offset_right = 14.0
-offset_bottom = 14.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("1_w8tcp")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="InventoryButton" type="Button" parent="Actions/MarginContainer/HBoxContainer" unique_id=316559409]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-size_flags_vertical = 4
-theme_override_styles/normal = ExtResource("2_1kkc0")
-theme_override_styles/pressed = ExtResource("3_qv4qp")
-theme_override_styles/hover = ExtResource("4_sh35x")
-
-[node name="Icon" type="TextureRect" parent="Actions/MarginContainer/HBoxContainer/InventoryButton" unique_id=480066523]
-custom_minimum_size = Vector2(28, 28)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -14.0
-offset_top = -14.0
-offset_right = 14.0
-offset_bottom = 14.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_svhta")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="StatsButton" type="Button" parent="Actions/MarginContainer/HBoxContainer" unique_id=1452206471]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-size_flags_vertical = 4
-theme_override_styles/normal = ExtResource("2_1kkc0")
-theme_override_styles/pressed = ExtResource("3_qv4qp")
-theme_override_styles/hover = ExtResource("4_sh35x")
-
-[node name="Icon" type="TextureRect" parent="Actions/MarginContainer/HBoxContainer/StatsButton" unique_id=1261885489]
-custom_minimum_size = Vector2(28, 28)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -14.0
-offset_top = -14.0
-offset_right = 14.0
-offset_bottom = 14.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("3_fjv1a")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="SkillsButton" type="Button" parent="Actions/MarginContainer/HBoxContainer" unique_id=1015476399]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-size_flags_vertical = 4
-theme_override_styles/normal = ExtResource("2_1kkc0")
-theme_override_styles/pressed = ExtResource("3_qv4qp")
-theme_override_styles/hover = ExtResource("4_sh35x")
-
-[node name="Icon" type="TextureRect" parent="Actions/MarginContainer/HBoxContainer/SkillsButton" unique_id=1422379083]
-custom_minimum_size = Vector2(28, 28)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -14.0
-offset_top = -14.0
-offset_right = 14.0
-offset_bottom = 14.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("4_0ivg5")
-expand_mode = 1
-stretch_mode = 5
+[node name="LoadoutBar" parent="." unique_id=776008566 instance=ExtResource("2_318vg")]
 
 [node name="Loadout" parent="." unique_id=745715130 instance=ExtResource("9_qv4qp")]
 offset_top = -440.0
 offset_bottom = -108.0
 
-[connection signal="pressed" from="Actions/MarginContainer/HBoxContainer/EquipmentButton" to="." method="_on_equipment_button_pressed"]
-[connection signal="pressed" from="Actions/MarginContainer/HBoxContainer/InventoryButton" to="." method="_on_inventory_button_pressed"]
-[connection signal="pressed" from="Actions/MarginContainer/HBoxContainer/StatsButton" to="." method="_on_stats_button_pressed"]
-[connection signal="pressed" from="Actions/MarginContainer/HBoxContainer/SkillsButton" to="." method="_on_skills_button_pressed"]
+[node name="SkillBar" parent="." unique_id=781275387 instance=ExtResource("4_w8tcp")]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -117.0
+offset_right = 117.0
+grow_horizontal = 2

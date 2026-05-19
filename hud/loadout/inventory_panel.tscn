@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dla1pm4heubp0"]
 
 [ext_resource type="PackedScene" uid="uid://bclukvvchgohb" path="res://hud/components/slot.tscn" id="1_2xp20"]
+[ext_resource type="Script" uid="uid://c2gfamlg13rh0" path="res://hud/loadout/inventory_panel.gd" id="1_ccj05"]
 [ext_resource type="Texture2D" uid="uid://brkbxbilm54kt" path="res://hud/sprites/GoldCoin.png" id="2_ccj05"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_is8n4"]
@@ -19,6 +20,7 @@ custom_minimum_size = Vector2(215, 0)
 offset_right = 215.0
 offset_bottom = 332.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_is8n4")
+script = ExtResource("1_ccj05")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1970329515]
 layout_mode = 2
