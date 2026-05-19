@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://bc1pbeevau1nv"]
+
+[ext_resource type="Script" uid="uid://bov566aqe5lnm" path="res://hud/components/skill_button.gd" id="1_2b00w"]
+[ext_resource type="Texture2D" uid="uid://v5qvkilqtpml" path="res://hud/sprites/Rain.png" id="1_kwfc4"]
+[ext_resource type="Texture2D" uid="uid://bbx76aflu24gg" path="res://hud/sprites/Lock.png" id="2_2b00w"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_57cw2"]
+bg_color = Color(0.28627452, 0.30588236, 0.36862746, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_em0cx"]
+bg_color = Color(0.18700731, 0.20138544, 0.2475025, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gcgxw"]
+bg_color = Color(0.46229208, 0.48758423, 0.5677302, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 6
+
+[node name="SkillButton" type="Button" unique_id=865249352]
+custom_minimum_size = Vector2(50, 50)
+theme_override_styles/normal = SubResource("StyleBoxFlat_57cw2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_em0cx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gcgxw")
+script = ExtResource("1_2b00w")
+
+[node name="Icon" type="TextureRect" parent="." unique_id=546185411]
+modulate = Color(0.43776295, 0.43776292, 0.4377629, 1)
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_kwfc4")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Lock" type="TextureRect" parent="." unique_id=763288758]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -15.0
+offset_top = -15.0
+offset_right = 15.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_2b00w")
+expand_mode = 1
+stretch_mode = 5
