@@ -13,12 +13,6 @@ func _ready() -> void:
 	inventory.resize(INVENTORY_SIZE)
 	pass
 	
-#testing	
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_accept"):
-		add_item(preload("uid://cnhathoc7pkm3"), 10)
-	pass	
-	
 func _get_empty_slot_indexes() -> Array[int]:
 	var empty: Array[int] = []
 	
@@ -82,4 +76,56 @@ func get_slot(index: int) -> SlotRes:
 	if index >= 0 and index < inventory.size():
 		return inventory[index]
 	return null
-pass	
+	pass	
+
+func swap_slots(from_index: int, to_index: int) -> void:
+	if from_index < 0 or from_index >= inventory.size():
+		return
+		
+	if to_index < 0 or to_index >= inventory.size():
+		return
+	
+	var temp = inventory[from_index]	
+	inventory[from_index] = inventory[to_index]
+	inventory[to_index] = temp
+	
+	on_inventory_changed.emit()
+	pass	
+	
+func merge_slots(from_index: int, to_index: int) -> void:
+	
+	var from_slot: SlotRes = get_slot(from_index)
+	var to_slot: SlotRes = get_slot(to_index)
+	
+	if from_slot or not to_slot:
+		return
+		
+	if from_slot.item != to_slot.item:
+		return
+	
+	var item = from_slot.item
+	if item.max_stack <= 1:
+		return
+		
+	var space = item.max_stack - to_slot.quantity
+	var to_move = min(space, from_slot.quantity)
+	
+	to_slot.quantity += to_move
+	from_slot.quantity -= to_move
+	
+	if from_slot.quantity <= 0:
+		inventory[from_index] = null
+	elif space <= 0:
+		swap_slots(from_index, to_index)	
+	
+	on_inventory_changed.emit()
+	pass		
+
+func get_slot_item(index: int) -> ItemRes:
+	var slot = get_slot(index)
+	
+	if slot:
+		return slot.item
+		
+	return null	
+	pass
