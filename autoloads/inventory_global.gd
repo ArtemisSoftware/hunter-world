@@ -97,7 +97,7 @@ func merge_slots(from_index: int, to_index: int) -> void:
 	var from_slot: SlotRes = get_slot(from_index)
 	var to_slot: SlotRes = get_slot(to_index)
 	
-	if from_slot or not to_slot:
+	if not from_slot or not to_slot:
 		return
 		
 	if from_slot.item != to_slot.item:

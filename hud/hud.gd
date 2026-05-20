@@ -3,17 +3,16 @@ class_name  Hud extends CanvasLayer
 @onready var loadout: HBoxContainer = $Loadout
 @onready var loadout_bar: Panel = $LoadoutBar
 @onready var player_hud: HBoxContainer = $PlayerHud
+@onready var grabbed_slot: Slot = $GrabbedSlot
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	EventBus.on_player_health_updated.connect(_on_player_health_updated)
 	EventBus.on_player_mana_updated.connect(_on_player_mana_updated)
 	EventBus.on_player_new_level.connect(_on_player_new_level)
-	pass # Replace with function body.
+	pass 
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 

@@ -11,7 +11,12 @@
 [ext_resource type="StyleBox" uid="uid://dw4nlyw5mxr7o" path="res://hud/styles/button_hover_style.tres" id="4_sh35x"]
 [ext_resource type="PackedScene" uid="uid://cpi22efxvf5d0" path="res://hud/actionbars/skill_bar.tscn" id="4_w8tcp"]
 [ext_resource type="PackedScene" uid="uid://bifs3wuod4544" path="res://hud/player_hud.tscn" id="5_svhta"]
-[ext_resource type="PackedScene" uid="uid://bhrer81783ggd" path="res://hud/loadout/loadout.tscn" id="9_qv4qp"]
+[ext_resource type="Script" uid="uid://bfmgf4y8ijmoi" path="res://hud/loadout/loadout.gd" id="10_pt78x"]
+[ext_resource type="PackedScene" uid="uid://cd6tubxmsqcio" path="res://hud/loadout/equipment_panel.tscn" id="11_put16"]
+[ext_resource type="PackedScene" uid="uid://dla1pm4heubp0" path="res://hud/loadout/inventory_panel.tscn" id="12_0bw3r"]
+[ext_resource type="PackedScene" uid="uid://312aq4uyn1qq" path="res://hud/loadout/stats_panel.tscn" id="13_lfqsj"]
+[ext_resource type="PackedScene" uid="uid://bj31m6e3ixt6n" path="res://hud/loadout/skills_panel.tscn" id="14_lyvac"]
+[ext_resource type="PackedScene" uid="uid://bclukvvchgohb" path="res://hud/components/slot.tscn" id="17_02s75"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1kkc0"]
 bg_color = Color(0.14901961, 0.16470589, 0.20784314, 1)
@@ -163,9 +168,39 @@ texture = ExtResource("4_0ivg5")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Loadout" parent="." unique_id=745715130 instance=ExtResource("9_qv4qp")]
+[node name="Loadout" type="HBoxContainer" parent="." unique_id=745715130]
+custom_minimum_size = Vector2(442, 332)
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -466.0
 offset_top = -440.0
+offset_right = -24.0
 offset_bottom = -108.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/separation = 12
+alignment = 2
+script = ExtResource("10_pt78x")
+
+[node name="EquipmentPanel" parent="Loadout" unique_id=20346764 instance=ExtResource("11_put16")]
+visible = false
+layout_mode = 2
+
+[node name="InventoryPanel" parent="Loadout" unique_id=560443786 node_paths=PackedStringArray("grabbed_slot") instance=ExtResource("12_0bw3r")]
+visible = false
+layout_mode = 2
+grabbed_slot = NodePath("../../GrabbedSlot")
+
+[node name="StatsPanel" parent="Loadout" unique_id=345648110 instance=ExtResource("13_lfqsj")]
+visible = false
+layout_mode = 2
+
+[node name="SkillsPanel" parent="Loadout" unique_id=1974587092 instance=ExtResource("14_lyvac")]
+visible = false
+layout_mode = 2
 
 [node name="SkillBar" parent="." unique_id=781275387 instance=ExtResource("4_w8tcp")]
 anchors_preset = 7
@@ -180,6 +215,15 @@ offset_left = 20.0
 offset_top = 20.0
 offset_right = 20.0
 offset_bottom = 80.0
+
+[node name="GrabbedSlot" parent="." unique_id=1217794321 instance=ExtResource("17_02s75")]
+visible = false
+offset_left = 972.0
+offset_top = 641.0
+offset_right = 1007.0
+offset_bottom = 676.0
+mouse_filter = 2
+flat = true
 
 [connection signal="pressed" from="LoadoutBar/MarginContainer/HBoxContainer/EquipmentButton" to="." method="_on_equipment_button_pressed"]
 [connection signal="pressed" from="LoadoutBar/MarginContainer/HBoxContainer/InventoryButton" to="." method="_on_inventory_button_pressed"]
