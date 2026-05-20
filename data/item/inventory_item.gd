@@ -1,4 +1,4 @@
-class_name InventoryItem extends Item
+class_name InventoryItem extends ItemRes
 
 enum Type {
 	FOOD,
