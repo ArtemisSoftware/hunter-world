@@ -18,5 +18,9 @@ func use_mana(value: float) -> void:
 		
 	current_mana = max(current_mana - value, 0)
 	on_mana_changed.emit(current_mana)
-
 	pass	
+	
+func add_mana(value: float) -> void:	
+	current_mana = min(current_mana + value, max_mana)
+	on_mana_changed.emit(current_mana)
+	pass		

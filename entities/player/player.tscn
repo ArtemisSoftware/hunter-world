@@ -331,3 +331,4 @@ position = Vector2(-3, -19)
 
 [connection signal="on_death" from="Components/Health" to="." method="_on_health_on_death"]
 [connection signal="on_health_changed" from="Components/Health" to="." method="_on_health_on_health_changed"]
+[connection signal="on_mana_changed" from="Components/Mana" to="." method="_on_mana_on_mana_changed"]

@@ -3,7 +3,7 @@ class_name Town extends Node2D
 @export var player_scene: PackedScene
 
 func _ready() -> void:
-	InventoryGlobal.on_inventory_used_item.connect(_on_inventory_used_item) #isto não deveria ser no player??????
+	InventoryGlobal.on_inventory_used_item.connect(_on_inventory_used_item) #TODO: isto não deveria ser no player ou no hud??????
 	_create_player()
 	pass 
 
@@ -22,5 +22,8 @@ func _create_player() -> void:
 	pass
 	
 func _on_inventory_used_item(item: ItemRes) -> void:
-	EventBus.player.health.heal(item.value)
+	
+	match item.id:
+		ItemRes.Identifier.HEALTH_POTION: EventBus.player.health.heal(item.value)
+		ItemRes.Identifier.MANA_POTION: EventBus.player.mana.add_mana(item.value)			
 	pass	

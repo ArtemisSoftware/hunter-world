@@ -42,6 +42,7 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_accept"):
 		exp.add_exp(10)
 		health.take_damage(1.0)
+		mana.use_mana(2.0)
 	pass	
 
 
@@ -63,18 +64,23 @@ func set_up() -> void:
 
 func reset_health() -> void:
 	health.setup(max_health)
-	EventBus.on_player_health_updated.emit(max_health, max_health)
+	EventBus.on_player_health_updated.emit(max_health, max_health) #TODO: dont understand the use of this
 	pass
 	
 func reset_mana() -> void:
 	mana.setup(max_mana)
-	EventBus.on_player_mana_updated.emit(max_mana, max_mana)
+	EventBus.on_player_mana_updated.emit(max_mana, max_mana) #TODO: dont understand the use of this
 	pass	
 	
 func use_mana(value: float) -> void:
 	mana.use_mana(value)
-	EventBus.on_player_mana_updated.emit(mana.current_mana, max_mana)
+	EventBus.on_player_mana_updated.emit(mana.current_mana, max_mana) #TODO: dont understand the use of this
 	pass		
+	
+func add_mana(value: float) -> void:
+	mana.add_mana(value)
+	EventBus.on_player_mana_updated.emit(mana.current_mana, max_mana) #TODO: dont understand the use of this
+	pass			
 
 	
 #----------------------------
@@ -129,4 +135,7 @@ func _on_health_on_health_changed(current_health: float) -> void:
 	EventBus.on_player_health_updated.emit(current_health, health.max_health)
 	pass
 
+func _on_mana_on_mana_changed(current_mana: float) -> void:
+	EventBus.on_player_mana_updated.emit(current_mana, mana.max_mana)
+	pass
 #endregion
