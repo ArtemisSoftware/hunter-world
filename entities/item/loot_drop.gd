@@ -30,8 +30,12 @@ func _shine() -> void:
 	shine_tween.tween_property(item_icon.material, "shader_parameter/shine_progress", 0.0, shine_speed).set_delay(0.0)
 	
 	pass 
+	
+#------------------------
+#SIGNALS
+#------------------------
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _on_body_entered(body: Node2D) -> void:
+	InventoryGlobal.add_item(item)
+	queue_free()
 	pass

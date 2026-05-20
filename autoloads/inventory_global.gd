@@ -19,7 +19,7 @@ func _input(event: InputEvent) -> void:
 		add_item(preload("uid://cnhathoc7pkm3"), 10)
 	pass	
 	
-func get_empty_slot_indexes() -> Array[int]:
+func _get_empty_slot_indexes() -> Array[int]:
 	var empty: Array[int] = []
 	
 	for index in inventory.size():
@@ -29,7 +29,7 @@ func get_empty_slot_indexes() -> Array[int]:
 	return empty		
 	pass	
 	
-func find_item_indexes(item: ItemRes, with_space: bool = false) -> Array[int]:
+func _find_item_indexes(item: ItemRes, with_space: bool = false) -> Array[int]:
 	var found: Array[int] = []
 	
 	for index in inventory.size():
@@ -51,7 +51,7 @@ func add_item(item: ItemRes, amount: int = 1) -> void:
 	var remaining = amount
 	
 	if item.max_stack > 1:
-		for index in find_item_indexes(item, true):
+		for index in _find_item_indexes(item, true):
 			if remaining <= 0:
 				break
 			
@@ -63,7 +63,7 @@ func add_item(item: ItemRes, amount: int = 1) -> void:
 			remaining -= to_give
 			
 	if remaining > 0:
-		for index in get_empty_slot_indexes():
+		for index in _get_empty_slot_indexes():
 			if remaining <= 0:
 				break
 				
@@ -76,3 +76,10 @@ func add_item(item: ItemRes, amount: int = 1) -> void:
 	if added > 0:
 		on_inventory_changed.emit()
 	pass	
+	
+	
+func get_slot(index: int) -> SlotRes:
+	if index >= 0 and index < inventory.size():
+		return inventory[index]
+	return null
+pass	

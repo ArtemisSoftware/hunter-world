@@ -252,6 +252,7 @@ radius = 7.0
 size = Vector2(6, 15)
 
 [node name="Player" type="CharacterBody2D" unique_id=915585019]
+collision_layer = 2
 script = ExtResource("1_bls4j")
 
 [node name="Shadow" type="Sprite2D" parent="." unique_id=1725785830]

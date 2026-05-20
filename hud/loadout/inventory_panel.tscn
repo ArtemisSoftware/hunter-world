@@ -84,6 +84,6 @@ texture = ExtResource("2_ccj05")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=367734558]
+[node name="GoldLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=367734558]
 layout_mode = 2
 text = "3000"
