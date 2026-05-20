@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="EquipmentItem" format=3 uid="uid://b00mjk88fvayr"]
+
+[ext_resource type="Script" uid="uid://bo72chdhgot8d" path="res://data/item/equipment_item.gd" id="1_c2tkf"]
+[ext_resource type="Texture2D" uid="uid://dvtstjt0bqy8m" path="res://data/sprites/placeholder_helmet.png" id="1_tao1u"]
+
+[resource]
+script = ExtResource("1_c2tkf")
+type = 4
+max_stack = 1
+id = 2
+icon = ExtResource("1_tao1u")
+name = "Common Helmet"
+price = 20
+metadata/_custom_type_script = "uid://bo72chdhgot8d"

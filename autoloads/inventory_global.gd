@@ -164,3 +164,29 @@ func get_slot_item(index: int) -> ItemRes:
 		
 	return null	
 	pass
+
+
+#region equipment
+
+func equip_item(slot_index: int) -> void:
+	var slot: SlotRes = get_slot(slot_index)
+	
+	if not slot: return
+	
+	if not slot.item is EquipmentItem: return
+	
+	var equipment: EquipmentItem = slot.item as EquipmentItem
+	var equip_key: String = equipment.get_equipment_key()
+
+	var current_equipped_item = EquipmentGlobal.equipment[equip_key] 
+	EquipmentGlobal.equipment[equip_key] = equipment
+	
+	inventory[slot_index] = null
+	if current_equipped_item:
+		add_item(current_equipped_item, 1)
+	
+	on_inventory_changed.emit()
+	on_equipment_changed.emit()
+	pass
+	
+#endregion

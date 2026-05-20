@@ -93,6 +93,7 @@ layout_mode = 2
 alignment = 1
 
 [node name="HelmetSlot" parent="MarginContainer/VBoxContainer/VBoxContainer/Head" unique_id=30661380 instance=ExtResource("2_m8a55")]
+unique_name_in_owner = true
 layout_mode = 2
 
 [node name="Chest" type="HBoxContainer" parent="MarginContainer/VBoxContainer/VBoxContainer" unique_id=960456139]
@@ -101,13 +102,15 @@ theme_override_constants/separation = 12
 alignment = 1
 
 [node name="WeaponSlot" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/Chest" unique_id=1734444971]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_e0oxb")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_m8a55")
 theme_override_styles/hover = SubResource("StyleBoxFlat_0kfig")
 
-[node name="ChestSlot2" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/Chest" unique_id=927629784]
+[node name="BodySlot" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/Chest" unique_id=927629784]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_e0oxb")
@@ -123,6 +126,7 @@ layout_mode = 2
 alignment = 1
 
 [node name="LegsSlot" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/Legs" unique_id=8938536]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_e0oxb")
@@ -134,6 +138,7 @@ layout_mode = 2
 alignment = 1
 
 [node name="RingSlot" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/Ring" unique_id=674387256]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_e0oxb")

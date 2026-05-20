@@ -8,5 +8,6 @@ class_name ItemRes extends Resource
 
 enum Identifier {
 	HEALTH_POTION,
-	MANA_POTION
+	MANA_POTION,
+	EQUIPMENT_HELMET,
 }

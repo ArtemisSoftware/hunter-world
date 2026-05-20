@@ -70,7 +70,11 @@ func _handle_right_button(slot_index: int) -> void:
 	var item = InventoryGlobal.get_slot_item(slot_index)
 	
 	if not item: return
-	elif InventoryGlobal.can_use_item(slot_index):
+	
+	if item is EquipmentItem:
+		InventoryGlobal.equip_item(slot_index)
+	
+	else:
 		InventoryGlobal.use_item(slot_index)
 		InventoryGlobal.on_inventory_used_item.emit(item)
 	pass		
