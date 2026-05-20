@@ -2,6 +2,7 @@ extends Node
 
 signal on_inventory_changed
 signal on_equipment_changed
+signal on_inventory_used_item(item: ItemRes)
 
 const INVENTORY_SIZE: int = 30
 
@@ -13,6 +14,31 @@ func _ready() -> void:
 	inventory.resize(INVENTORY_SIZE)
 	pass
 	
+#region use item	
+	
+func use_item(slot_index) -> void:
+	
+	var slot: SlotRes = inventory[slot_index]
+	if not slot: return
+	
+	if not slot.item.is_consumable: return
+	
+	slot.quantity -= 1
+	if slot.quantity <= 0:
+		inventory[slot_index] = null
+	
+	on_inventory_changed.emit()	
+	pass	
+	
+func can_use_item(slot_index) -> bool:
+	
+	var slot: SlotRes = get_slot(slot_index)
+	return slot and slot.item.is_consumable
+	pass	
+	
+#endregion		
+	
+#region find item		
 func _get_empty_slot_indexes() -> Array[int]:
 	var empty: Array[int] = []
 	
@@ -36,6 +62,10 @@ func _find_item_indexes(item: ItemRes, with_space: bool = false) -> Array[int]:
 				found.append(index)
 	return found
 	pass	
+	
+#endregion	
+
+#region add / remove
 	
 func add_item(item: ItemRes, amount: int = 1) -> void:
 	
@@ -78,6 +108,9 @@ func get_slot(index: int) -> SlotRes:
 	return null
 	pass	
 
+#endregion
+
+#region move slots
 func swap_slots(from_index: int, to_index: int) -> void:
 	if from_index < 0 or from_index >= inventory.size():
 		return
@@ -120,6 +153,8 @@ func merge_slots(from_index: int, to_index: int) -> void:
 	
 	on_inventory_changed.emit()
 	pass		
+
+#endregion
 
 func get_slot_item(index: int) -> ItemRes:
 	var slot = get_slot(index)

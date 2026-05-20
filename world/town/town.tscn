@@ -3578,3 +3578,7 @@ tile_set = SubResource("TileSet_71q60")
 [node name="LootDrop" parent="." unique_id=1383907487 instance=ExtResource("11_282io")]
 position = Vector2(77, 15)
 item = ExtResource("12_c5hwo")
+
+[node name="LootDrop2" parent="." unique_id=961230940 instance=ExtResource("11_282io")]
+position = Vector2(119, 15)
+item = ExtResource("12_c5hwo")

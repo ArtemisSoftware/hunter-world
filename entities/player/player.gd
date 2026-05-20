@@ -35,13 +35,13 @@ var last_direction: String = "down"
 
 
 func _ready() -> void:
-	set_up()
+	
 	pass
 	
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_accept"):
 		exp.add_exp(10)
-		
+		health.take_damage(1.0)
 	pass	
 
 
@@ -118,3 +118,15 @@ func play_direction_animation(animation_name: String) -> void:
 	
 	
 		
+#region signal observers
+
+func _on_health_on_death() -> void:
+	queue_free()
+	pass 
+
+
+func _on_health_on_health_changed(current_health: float) -> void:
+	EventBus.on_player_health_updated.emit(current_health, health.max_health)
+	pass
+
+#endregion

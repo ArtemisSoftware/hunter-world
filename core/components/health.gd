@@ -24,3 +24,10 @@ func take_damage(value: float) -> void:
 		on_death.emit()
 	
 	pass	
+	
+
+func heal(value: float) -> void:
+	current_health = min(current_health + value, max_health)
+	on_health_changed.emit(current_health)
+	pass	
+		

@@ -15,7 +15,7 @@ func _ready() -> void:
 	for index in grid_container.get_child_count():
 		var slot: Slot = grid_container.get_child(index)
 		slot.on_slot_clicked.connect(_on_slot_clicked)
-		slot.on_slot_hovered.connect(_on_slot_hoverd)
+		slot.on_slot_hovered.connect(on_slot_hovered)
 		slot.slot_index = index
 		slots.append(slot)
 	pass
@@ -67,7 +67,12 @@ func _handle_left_button(slot_index: int) -> void:
 	pass	
 	
 func _handle_right_button(slot_index: int) -> void:
+	var item = InventoryGlobal.get_slot_item(slot_index)
 	
+	if not item: return
+	elif InventoryGlobal.can_use_item(slot_index):
+		InventoryGlobal.use_item(slot_index)
+		InventoryGlobal.on_inventory_used_item.emit(item)
 	pass		
 	
 #-------------------
@@ -86,6 +91,6 @@ func _on_slot_clicked(slot_index: int, button: int) -> void:
 	pass	
 	
 	
-func _on_slot_hoverd(slot_index: int) -> void:
+func on_slot_hovered(slot_index: int) -> void:
 	
 	pass			
