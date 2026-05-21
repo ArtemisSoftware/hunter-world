@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="InventoryItem" format=3 uid="uid://tsn608ld0afw"]
+
+[ext_resource type="Texture2D" uid="uid://bsc2vdpwcmbr" path="res://data/sprites/Fish.png" id="1_snl70"]
+[ext_resource type="Script" uid="uid://pjrwm5axmp3x" path="res://data/item/inventory_item.gd" id="2_1elqa"]
+
+[resource]
+script = ExtResource("2_1elqa")
+is_consumable = true
+max_stack = 5
+value = 2.0
+id = 7
+icon = ExtResource("1_snl70")
+name = "Fish"
+price = 5
+metadata/_custom_type_script = "uid://pjrwm5axmp3x"

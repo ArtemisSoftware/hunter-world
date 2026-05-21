@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="InventoryItem" format=3 uid="uid://cwsjpgmgd2nid"]
+
+[ext_resource type="Texture2D" uid="uid://b3vsro3jocxs3" path="res://data/sprites/Meat.png" id="1_xgv6y"]
+[ext_resource type="Script" uid="uid://pjrwm5axmp3x" path="res://data/item/inventory_item.gd" id="2_1o1nw"]
+
+[resource]
+script = ExtResource("2_1o1nw")
+is_consumable = true
+max_stack = 5
+value = 2.0
+id = 9
+icon = ExtResource("1_xgv6y")
+name = "Meat"
+price = 8
+metadata/_custom_type_script = "uid://pjrwm5axmp3x"

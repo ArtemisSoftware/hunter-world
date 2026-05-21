@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="EquipmentItem" format=3 uid="uid://cwj4chtg7px2g"]
+
+[ext_resource type="Texture2D" uid="uid://dfxhttupulcbx" path="res://data/sprites/placeholder_ring.png" id="1_ifxgs"]
+[ext_resource type="Script" uid="uid://bo72chdhgot8d" path="res://data/item/equipment_item.gd" id="2_psyt1"]
+
+[resource]
+script = ExtResource("2_psyt1")
+type = 4
+max_stack = 1
+id = 6
+icon = ExtResource("1_ifxgs")
+name = "Common Ring"
+price = 5
+metadata/_custom_type_script = "uid://bo72chdhgot8d"

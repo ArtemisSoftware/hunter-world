@@ -14,6 +14,10 @@
 [ext_resource type="Resource" uid="uid://cnhathoc7pkm3" path="res://data/potions/hp_potion.tres" id="12_c5hwo"]
 [ext_resource type="Resource" uid="uid://1xxljq10oi2u" path="res://data/potions/mp_potion.tres" id="13_146p3"]
 [ext_resource type="Resource" uid="uid://b00mjk88fvayr" path="res://data/equipment/helmet_common.tres" id="14_73wqi"]
+[ext_resource type="Resource" uid="uid://bh2nyboyxx67f" path="res://data/equipment/body_common.tres" id="15_0jmgk"]
+[ext_resource type="Resource" uid="uid://dmpced4tf7udh" path="res://data/equipment/legs_common.tres" id="16_n3h5c"]
+[ext_resource type="Resource" uid="uid://cwj4chtg7px2g" path="res://data/equipment/ring_common.tres" id="17_busg1"]
+[ext_resource type="Resource" uid="uid://yavrt1hmjo30" path="res://data/equipment/weapon_common.tres" id="18_pm63g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mxda2"]
 texture = ExtResource("1_j8u2a")
@@ -3585,6 +3589,24 @@ item = ExtResource("12_c5hwo")
 position = Vector2(119, 15)
 item = ExtResource("13_146p3")
 
-[node name="LootDrop3" parent="." unique_id=1925581087 instance=ExtResource("11_282io")]
-position = Vector2(77, -20)
+[node name="Equipment" type="Node" parent="." unique_id=2029713658]
+
+[node name="LootDrop3" parent="Equipment" unique_id=1925581087 instance=ExtResource("11_282io")]
+position = Vector2(103, -67)
 item = ExtResource("14_73wqi")
+
+[node name="LootDrop4" parent="Equipment" unique_id=1005366420 instance=ExtResource("11_282io")]
+position = Vector2(121, -45)
+item = ExtResource("15_0jmgk")
+
+[node name="LootDrop5" parent="Equipment" unique_id=2145452473 instance=ExtResource("11_282io")]
+position = Vector2(121, -23)
+item = ExtResource("16_n3h5c")
+
+[node name="LootDrop6" parent="Equipment" unique_id=271508082 instance=ExtResource("11_282io")]
+position = Vector2(120, -68)
+item = ExtResource("17_busg1")
+
+[node name="LootDrop7" parent="Equipment" unique_id=1722691331 instance=ExtResource("11_282io")]
+position = Vector2(102, -42)
+item = ExtResource("18_pm63g")

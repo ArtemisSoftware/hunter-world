@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="InventoryItem" format=3 uid="uid://clxuwry5ewf15"]
+
+[ext_resource type="Texture2D" uid="uid://cn0jand8e3qcc" path="res://data/sprites/Honey.png" id="1_km0df"]
+[ext_resource type="Script" uid="uid://pjrwm5axmp3x" path="res://data/item/inventory_item.gd" id="2_6rlye"]
+
+[resource]
+script = ExtResource("2_6rlye")
+is_consumable = true
+max_stack = 5
+value = 2.0
+id = 10
+icon = ExtResource("1_km0df")
+name = "Honey"
+price = 10
+metadata/_custom_type_script = "uid://pjrwm5axmp3x"

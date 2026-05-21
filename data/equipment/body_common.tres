@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="EquipmentItem" format=3 uid="uid://bh2nyboyxx67f"]
+
+[ext_resource type="Texture2D" uid="uid://dwlbgqp7guhow" path="res://data/sprites/placeholder_body.png" id="1_mwyor"]
+[ext_resource type="Script" uid="uid://bo72chdhgot8d" path="res://data/item/equipment_item.gd" id="2_5m3x2"]
+
+[resource]
+script = ExtResource("2_5m3x2")
+type = 4
+max_stack = 1
+id = 4
+icon = ExtResource("1_mwyor")
+name = "Common Body"
+price = 30
+metadata/_custom_type_script = "uid://bo72chdhgot8d"

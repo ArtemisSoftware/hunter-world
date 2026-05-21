@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="EquipmentItem" format=3 uid="uid://dmpced4tf7udh"]
+
+[ext_resource type="Script" uid="uid://bo72chdhgot8d" path="res://data/item/equipment_item.gd" id="1_akbt4"]
+[ext_resource type="Texture2D" uid="uid://dw6w81efsou0u" path="res://data/sprites/placeholder_legs.png" id="1_rwsjj"]
+
+[resource]
+script = ExtResource("1_akbt4")
+equipment_type = 2
+type = 4
+id = 3
+icon = ExtResource("1_rwsjj")
+name = "Common leg armour "
+price = 10
+metadata/_custom_type_script = "uid://bo72chdhgot8d"
