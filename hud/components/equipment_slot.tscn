@@ -44,3 +44,8 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_e0oxb")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_m8a55")
 theme_override_styles/hover = SubResource("StyleBoxFlat_0kfig")
 script = ExtResource("1_v18g5")
+
+[node name="ItemIcon" type="TextureRect" parent="." unique_id=317329678]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0

@@ -189,4 +189,16 @@ func equip_item(slot_index: int) -> void:
 	on_equipment_changed.emit()
 	pass
 	
+	
+func unequip_item(equipment_type: EquipmentItem.EquipmentType) -> void:
+	var result = EquipmentGlobal.get_equipment(equipment_type)
+	
+	if not result.equipment: return
+	
+	add_item(result.equipment) 
+	EquipmentGlobal.remove(result.key)
+	
+	on_equipment_changed.emit()
+	pass
+	
 #endregion

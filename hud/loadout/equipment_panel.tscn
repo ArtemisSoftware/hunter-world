@@ -15,42 +15,6 @@ shadow_color = Color(0.101960786, 0.11372549, 0.14901961, 1)
 shadow_size = 2
 shadow_offset = Vector2(4, 4)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e0oxb"]
-bg_color = Color(0.21960784, 0.23137255, 0.2901961, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.5921569, 0.5921569, 0.5921569, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m8a55"]
-bg_color = Color(0.16871274, 0.17840454, 0.22695181, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.5921569, 0.5921569, 0.5921569, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0kfig"]
-bg_color = Color(0.29084164, 0.30530038, 0.37731123, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.5921569, 0.5921569, 0.5921569, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-
 [sub_resource type="LabelSettings" id="LabelSettings_s7j34"]
 
 [node name="EquipmentPanel" type="PanelContainer" unique_id=560443786]
@@ -101,21 +65,13 @@ layout_mode = 2
 theme_override_constants/separation = 12
 alignment = 1
 
-[node name="WeaponSlot" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/Chest" unique_id=1734444971]
+[node name="WeaponSlot" parent="MarginContainer/VBoxContainer/VBoxContainer/Chest" unique_id=486750958 instance=ExtResource("2_m8a55")]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_e0oxb")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_m8a55")
-theme_override_styles/hover = SubResource("StyleBoxFlat_0kfig")
 
-[node name="BodySlot" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/Chest" unique_id=927629784]
+[node name="BodySlot" parent="MarginContainer/VBoxContainer/VBoxContainer/Chest" unique_id=885850491 instance=ExtResource("2_m8a55")]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_e0oxb")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_m8a55")
-theme_override_styles/hover = SubResource("StyleBoxFlat_0kfig")
 
 [node name="Control" type="Control" parent="MarginContainer/VBoxContainer/VBoxContainer/Chest" unique_id=740519087]
 custom_minimum_size = Vector2(40, 40)
@@ -125,25 +81,17 @@ layout_mode = 2
 layout_mode = 2
 alignment = 1
 
-[node name="LegsSlot" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/Legs" unique_id=8938536]
+[node name="LegsSlot" parent="MarginContainer/VBoxContainer/VBoxContainer/Legs" unique_id=1233562379 instance=ExtResource("2_m8a55")]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_e0oxb")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_m8a55")
-theme_override_styles/hover = SubResource("StyleBoxFlat_0kfig")
 
 [node name="Ring" type="HBoxContainer" parent="MarginContainer/VBoxContainer/VBoxContainer" unique_id=133444854]
 layout_mode = 2
 alignment = 1
 
-[node name="RingSlot" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/Ring" unique_id=674387256]
+[node name="RingSlot" parent="MarginContainer/VBoxContainer/VBoxContainer/Ring" unique_id=1387017672 instance=ExtResource("2_m8a55")]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_e0oxb")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_m8a55")
-theme_override_styles/hover = SubResource("StyleBoxFlat_0kfig")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1405289245]
 layout_mode = 2
