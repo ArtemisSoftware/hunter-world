@@ -8,6 +8,7 @@ class_name Player extends CharacterBody2D
 @export var damage: float = 5.0
 @export var critical_chance: float = 0.0
 @export var critical_damage: float = 0.0
+@export var current_points: int = 5
 
 @export_group("Experience")
 @export var base_exp: float = 100.0
@@ -31,7 +32,7 @@ class_name Player extends CharacterBody2D
 
 
 var last_direction: String = "down"	
-
+var stats: Stats
 
 
 func _ready() -> void:
@@ -60,6 +61,7 @@ func set_up() -> void:
 	exp.setup(base_exp, exp_multiplier)
 	exp.on_next_level.connect(EventBus.on_player_new_level.emit)
 	exp.on_experience_updated.connect(EventBus.on_player_stats_updated.emit)
+	stats = Stats.new()
 	pass	
 
 func reset_health() -> void:

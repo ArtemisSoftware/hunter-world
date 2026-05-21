@@ -254,6 +254,7 @@ size = Vector2(6, 15)
 [node name="Player" type="CharacterBody2D" unique_id=915585019]
 collision_layer = 2
 script = ExtResource("1_bls4j")
+max_health = 1900.0
 
 [node name="Shadow" type="Sprite2D" parent="." unique_id=1725785830]
 self_modulate = Color(1, 1, 1, 0.21176471)
