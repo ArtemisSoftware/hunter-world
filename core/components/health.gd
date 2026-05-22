@@ -1,14 +1,14 @@
 class_name Health extends Node
 
 var current_health: float
-var max_health: float
+var _max_health: float
 
 signal on_health_changed(current_health: float)
 signal on_death()
 
 
 func setup(value: float) -> void:
-	max_health = value
+	_max_health = value
 	current_health = value
 	pass
 	
@@ -27,7 +27,7 @@ func take_damage(value: float) -> void:
 	
 
 func heal(value: float) -> void:
-	current_health = min(current_health + value, max_health)
+	current_health = min(current_health + value, _max_health)
 	on_health_changed.emit(current_health)
 	pass	
 		

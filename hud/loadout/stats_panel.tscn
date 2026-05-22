@@ -226,6 +226,7 @@ text = "1"
 label_settings = SubResource("LabelSettings_a054e")
 
 [node name="StrengthButton" type="Button" parent="MarginContainer/VBoxContainer/Attributes/HBoxContainer" unique_id=1925303752]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(30, 20)
 layout_mode = 2
 theme_override_styles/normal = ExtResource("1_uh6j2")
@@ -250,6 +251,7 @@ text = "1"
 label_settings = SubResource("LabelSettings_a054e")
 
 [node name="DexterityButton" type="Button" parent="MarginContainer/VBoxContainer/Attributes/HBoxContainer2" unique_id=99406291]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(30, 20)
 layout_mode = 2
 theme_override_styles/normal = ExtResource("1_uh6j2")
@@ -274,6 +276,7 @@ text = "1"
 label_settings = SubResource("LabelSettings_a054e")
 
 [node name="InteligenceButton" type="Button" parent="MarginContainer/VBoxContainer/Attributes/HBoxContainer3" unique_id=284765152]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(30, 20)
 layout_mode = 2
 theme_override_styles/normal = ExtResource("1_uh6j2")

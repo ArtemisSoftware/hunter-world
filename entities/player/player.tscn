@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bo3m6gxc760qo" path="res://entities/player/player.gd" id="1_bls4j"]
 [ext_resource type="Texture2D" uid="uid://7hmoo8xcaoty" path="res://core/sprites/Shadow.png" id="1_sglur"]
+[ext_resource type="Resource" uid="uid://bvhciwvvgo045" path="res://core/components/resources/player_stats.tres" id="2_afbqv"]
 [ext_resource type="Texture2D" uid="uid://clphsdu8g75nn" path="res://entities/player/sprites/Idle.png" id="2_bls4j"]
 [ext_resource type="Texture2D" uid="uid://rtjovwh1rato" path="res://entities/player/sprites/Walk.png" id="3_fkugw"]
 [ext_resource type="Texture2D" uid="uid://kyr3l72aaw6a" path="res://entities/player/sprites/Attack.png" id="3_j3ovn"]
@@ -254,7 +255,7 @@ size = Vector2(6, 15)
 [node name="Player" type="CharacterBody2D" unique_id=915585019]
 collision_layer = 2
 script = ExtResource("1_bls4j")
-max_health = 1900.0
+stats = ExtResource("2_afbqv")
 
 [node name="Shadow" type="Sprite2D" parent="." unique_id=1725785830]
 self_modulate = Color(1, 1, 1, 0.21176471)

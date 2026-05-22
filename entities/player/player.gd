@@ -2,13 +2,7 @@ class_name Player extends CharacterBody2D
 
 
 @export_group("Stats")
-@export var max_health: float = 10.0
-@export var max_mana: float = 10.0
-@export var move_speed: float = 60.0
-@export var damage: float = 5.0
-@export var critical_chance: float = 0.0
-@export var critical_damage: float = 0.0
-@export var current_points: int = 5
+@export var stats: Stats
 
 @export_group("Experience")
 @export var base_exp: float = 100.0
@@ -32,7 +26,7 @@ class_name Player extends CharacterBody2D
 
 
 var last_direction: String = "down"	
-var stats: Stats
+
 
 
 func _ready() -> void:
@@ -42,8 +36,8 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_accept"):
 		exp.add_exp(10)
-		health.take_damage(1.0)
-		mana.use_mana(2.0)
+		#health.take_damage(1.0)
+		#mana.use_mana(1.0)
 	pass	
 
 
@@ -56,35 +50,45 @@ func _process(delta: float) -> void:
 	pass
 
 func set_up() -> void:
+	
 	reset_health()
 	reset_mana()
 	exp.setup(base_exp, exp_multiplier)
 	exp.on_next_level.connect(EventBus.on_player_new_level.emit)
 	exp.on_experience_updated.connect(EventBus.on_player_stats_updated.emit)
-	stats = Stats.new()
+
+	stats.on_stat_upgrade.connect(_on_stat_upgrade)
 	pass	
 
 func reset_health() -> void:
-	health.setup(max_health)
-	EventBus.on_player_health_updated.emit(max_health, max_health) #TODO: dont understand the use of this
+	health.setup(stats.max_health)
+	EventBus.on_player_health_updated.emit(stats.max_health, stats.max_health) #TODO: dont understand the use of this
 	pass
 	
 func reset_mana() -> void:
-	mana.setup(max_mana)
-	EventBus.on_player_mana_updated.emit(max_mana, max_mana) #TODO: dont understand the use of this
+	mana.setup(stats.max_mana)
+	EventBus.on_player_mana_updated.emit(stats.max_mana, stats.max_mana) #TODO: dont understand the use of this
 	pass	
 	
 func use_mana(value: float) -> void:
 	mana.use_mana(value)
-	EventBus.on_player_mana_updated.emit(mana.current_mana, max_mana) #TODO: dont understand the use of this
+	EventBus.on_player_mana_updated.emit(stats.mana.current_mana, stats.max_mana) #TODO: dont understand the use of this
 	pass		
 	
 func add_mana(value: float) -> void:
 	mana.add_mana(value)
-	EventBus.on_player_mana_updated.emit(mana.current_mana, max_mana) #TODO: dont understand the use of this
+	EventBus.on_player_mana_updated.emit(stats.mana.current_mana, stats.max_mana) #TODO: dont understand the use of this
 	pass			
 
+func _on_stat_upgrade(type: Stats.Type) -> void:
 	
+	match type:
+		Stats.Type.STRENGHT: reset_health()
+		Stats.Type.INTELLINGENCE: reset_mana()
+	
+	exp.consume_points()
+	EventBus.on_player_stats_updated.emit()
+	pass
 #----------------------------
 ############# ATTACK	
 #----------------------------	

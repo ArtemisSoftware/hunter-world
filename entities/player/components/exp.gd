@@ -32,4 +32,8 @@ func _level_up() -> void:
 	on_experience_updated.emit()	
 	pass	
 	
+func consume_points() -> void:
+	current_points -= 1
+	pass	
+	
 	
