@@ -9,6 +9,7 @@ enum EquipmentType {
 }
 
 @export var equipment_type: EquipmentType
+@export var bonus_damage: float = 0.0
 
 func _init() -> void:
 	type = Type.EQUIPMENT

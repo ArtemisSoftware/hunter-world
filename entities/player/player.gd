@@ -89,6 +89,23 @@ func _on_stat_upgrade(type: Stats.Type) -> void:
 	exp.consume_points()
 	EventBus.on_player_stats_updated.emit()
 	pass
+	
+	
+func get_damage(skill_dmg: float = 0.0) -> float:
+	
+	var total_dmg = stats.damage + skill_dmg
+	
+	for equipment: EquipmentItem in EquipmentGlobal.equipment.values():
+		
+		if equipment:
+			total_dmg += equipment.bonus_damage
+	
+	if randf() * 100 <= stats.critical_chance:
+		total_dmg *= (1.0 + (stats.critical_damage / 100.0))
+		
+	return total_dmg
+	pass	
+	
 #----------------------------
 ############# ATTACK	
 #----------------------------	
