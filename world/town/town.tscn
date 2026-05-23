@@ -18,6 +18,7 @@
 [ext_resource type="Resource" uid="uid://dmpced4tf7udh" path="res://data/equipment/legs_common.tres" id="16_n3h5c"]
 [ext_resource type="Resource" uid="uid://cwj4chtg7px2g" path="res://data/equipment/ring_common.tres" id="17_busg1"]
 [ext_resource type="Resource" uid="uid://yavrt1hmjo30" path="res://data/equipment/weapon_common.tres" id="18_pm63g"]
+[ext_resource type="PackedScene" uid="uid://cpfcopxkll4il" path="res://world/town/enemyzones/town_enemy_zone_1.tscn" id="19_n3h5c"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mxda2"]
 texture = ExtResource("1_j8u2a")
@@ -3580,6 +3581,7 @@ tile_map_data = PackedByteArray("AAAaAA0AAAAAAAAAAAAaAA4AAAAAAAEAAAAaAA8AAAAAAAI
 tile_set = SubResource("TileSet_71q60")
 
 [node name="HUD" parent="." unique_id=73779187 instance=ExtResource("8_mtj1y")]
+visible = false
 
 [node name="LootDrop" parent="." unique_id=1383907487 instance=ExtResource("11_282io")]
 position = Vector2(77, 15)
@@ -3610,3 +3612,12 @@ item = ExtResource("17_busg1")
 [node name="LootDrop7" parent="Equipment" unique_id=1722691331 instance=ExtResource("11_282io")]
 position = Vector2(102, -42)
 item = ExtResource("18_pm63g")
+
+[node name="EnemyZones" type="Node2D" parent="." unique_id=547702384]
+
+[node name="TownEnemyZone1" parent="EnemyZones" unique_id=1384719465 instance=ExtResource("19_n3h5c")]
+position = Vector2(699, -32)
+position_x = 25.0
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=129139763]
+position = Vector2(713, 122)

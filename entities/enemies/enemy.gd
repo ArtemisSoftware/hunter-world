@@ -5,7 +5,9 @@ class_name Enemy extends Area2D
 @onready var selector: Sprite2D = $Selector
 @onready var health: Health = $Health
 
+signal  on_death
 
+var enemy_zone: EnemyZone
 
 func _ready() -> void:
 	health.setup(stats.max_health)

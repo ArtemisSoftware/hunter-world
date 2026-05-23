@@ -18,6 +18,6 @@ func process_state(delta: float) -> void:
 		
 	player.update_direction(input_vector)
 	player.play_direction_animation("walk")	
-	player.velocity = input_vector * player.move_speed
+	player.velocity = input_vector * player.stats.move_speed
 	player.move_and_slide()
 	pass

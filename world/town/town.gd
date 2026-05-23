@@ -1,6 +1,7 @@
 class_name Town extends Node2D
 
 @export var player_scene: PackedScene
+@onready var marker_2d: Marker2D = $Marker2D
 
 func _ready() -> void:
 	InventoryGlobal.on_inventory_used_item.connect(_on_inventory_used_item) #TODO: isto não deveria ser no player ou no hud??????
@@ -15,7 +16,9 @@ func _process(delta: float) -> void:
 
 func _create_player() -> void:
 	var player: Player = player_scene.instantiate()
+	player.position = marker_2d.global_position
 	add_child(player)
+	
 	player.set_up()
 	EventBus.player = player
 	EventBus.on_player_created.emit()

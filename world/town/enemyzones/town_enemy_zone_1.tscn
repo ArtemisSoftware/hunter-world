@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cpfcopxkll4il"]
+
+[ext_resource type="Script" uid="uid://drftfwqmhwtjg" path="res://world/town/enemyzones/town_enemy_zone_1.gd" id="1_qwpi8"]
+[ext_resource type="PackedScene" uid="uid://b0hy4plcpxr78" path="res://entities/enemies/enemy.tscn" id="2_yonvs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_47vde"]
+size = Vector2(163, 77)
+
+[node name="TownEnemyZone1" type="Area2D" unique_id=1384719465]
+script = ExtResource("1_qwpi8")
+enemy_scene = ExtResource("2_yonvs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1593780901]
+position = Vector2(25, 5)
+shape = SubResource("RectangleShape2D_47vde")
+
+[node name="Timer" type="Timer" parent="." unique_id=1438468016]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
