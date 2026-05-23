@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bj8i27kk1yq5j" path="res://core/components/health.tscn" id="4_ipr6v"]
 [ext_resource type="Script" uid="uid://3wpqv7xj45x0" path="res://core/fsm/fsm.gd" id="7_gj3y3"]
 [ext_resource type="Script" uid="uid://cfatlcs1lnhl1" path="res://entities/enemies/states/enemy_wander_state.gd" id="8_56i32"]
+[ext_resource type="Script" uid="uid://crknht25fbsiw" path="res://entities/enemies/states/enemy_follow_state.gd" id="9_56i32"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gj3y3"]
 atlas = ExtResource("2_twyc1")
@@ -193,6 +194,9 @@ initial_state = NodePath("Wander")
 
 [node name="Wander" type="Node" parent="FSM" unique_id=941802286]
 script = ExtResource("8_56i32")
-min_move_speed = null
-max_move_speed = null
-arrival_distance = null
+
+[node name="Follow" type="Node" parent="FSM" unique_id=432587264]
+script = ExtResource("9_56i32")
+
+[connection signal="body_entered" from="DetectArea2D" to="." method="_on_detect_area_2d_body_entered"]
+[connection signal="body_exited" from="DetectArea2D" to="." method="_on_detect_area_2d_body_exited"]

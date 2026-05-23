@@ -9,7 +9,7 @@ class_name Enemy extends Area2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 
-signal  on_death
+signal on_death
 
 var enemy_zone: EnemyZone
 
@@ -20,6 +20,10 @@ func _ready() -> void:
 func select_enemy() -> void:
 	selector.show()
 	pass	
+	
+func deselect_enemy() -> void:
+	selector.hide()
+	pass		
 	
 func _process(delta: float) -> void:
 	if fsm.current_state: fsm.current_state.process_state(delta)
@@ -39,3 +43,14 @@ func update_animation(direction: Vector2) -> void:
 			animated_sprite_2d.play("move_up")		
 			
 	pass	
+
+
+func _on_detect_area_2d_body_entered(body: Node2D) -> void:
+	fsm.transition_to("Follow")
+	
+	pass # Replace with function body.
+
+
+func _on_detect_area_2d_body_exited(body: Node2D) -> void:
+	fsm.transition_to("Wander")
+	pass # Replace with function body.
