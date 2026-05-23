@@ -3581,7 +3581,6 @@ tile_map_data = PackedByteArray("AAAaAA0AAAAAAAAAAAAaAA4AAAAAAAEAAAAaAA8AAAAAAAI
 tile_set = SubResource("TileSet_71q60")
 
 [node name="HUD" parent="." unique_id=73779187 instance=ExtResource("8_mtj1y")]
-visible = false
 
 [node name="LootDrop" parent="." unique_id=1383907487 instance=ExtResource("11_282io")]
 position = Vector2(77, 15)

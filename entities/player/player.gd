@@ -155,10 +155,10 @@ func _on_health_on_death() -> void:
 
 
 func _on_health_on_health_changed(current_health: float) -> void:
-	EventBus.on_player_health_updated.emit(current_health, health.max_health)
+	EventBus.on_player_health_updated.emit(current_health, stats.max_health)
 	pass
 
 func _on_mana_on_mana_changed(current_mana: float) -> void:
-	EventBus.on_player_mana_updated.emit(current_mana, mana.max_mana)
+	EventBus.on_player_mana_updated.emit(current_mana, stats.max_mana)
 	pass
 #endregion
