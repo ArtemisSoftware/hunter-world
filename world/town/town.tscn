@@ -3617,7 +3617,6 @@ item = ExtResource("18_pm63g")
 
 [node name="TownEnemyZone1" parent="EnemyZones" unique_id=1384719465 instance=ExtResource("19_n3h5c")]
 position = Vector2(699, -32)
-position_x = 25.0
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=129139763]
 position = Vector2(713, 122)
