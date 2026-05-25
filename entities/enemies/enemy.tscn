@@ -152,6 +152,25 @@ radius = 6.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_rag6w"]
 radius = 25.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sb13e"]
+bg_color = Color(0.25490198, 0.023529412, 0.02745098, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3udgd"]
+bg_color = Color(0.70980394, 0.13725491, 0.14901961, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.25490198, 0.023529412, 0.02745098, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
 [node name="Enemy" type="Area2D" unique_id=1364082049]
 collision_layer = 4
 script = ExtResource("1_twyc1")
@@ -189,6 +208,19 @@ debug_color = Color(0.8995635, 0.24777824, 0.49359196, 0.41960785)
 
 [node name="Health" parent="." unique_id=622829099 instance=ExtResource("4_ipr6v")]
 
+[node name="HealthBar" type="ProgressBar" parent="." unique_id=1616682213]
+custom_minimum_size = Vector2(20, 5)
+offset_left = -10.0
+offset_top = -23.0
+offset_right = 10.0
+offset_bottom = -18.0
+theme_override_styles/background = SubResource("StyleBoxFlat_sb13e")
+theme_override_styles/fill = SubResource("StyleBoxFlat_3udgd")
+max_value = 1.0
+step = 0.001
+value = 1.0
+show_percentage = false
+
 [node name="FSM" type="Node" parent="." unique_id=256102731]
 script = ExtResource("7_gj3y3")
 initial_state = NodePath("Wander")
@@ -204,3 +236,4 @@ script = ExtResource("10_sb13e")
 
 [connection signal="body_entered" from="DetectArea2D" to="." method="_on_detect_area_2d_body_entered"]
 [connection signal="body_exited" from="DetectArea2D" to="." method="_on_detect_area_2d_body_exited"]
+[connection signal="on_health_changed" from="Health" to="." method="_on_health_on_health_changed"]

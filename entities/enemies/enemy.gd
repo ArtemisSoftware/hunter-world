@@ -7,6 +7,7 @@ class_name Enemy extends Area2D
 
 @onready var fsm: FSM = $FSM
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var health_bar: ProgressBar = $HealthBar
 
 
 signal on_death
@@ -15,6 +16,7 @@ var enemy_zone: EnemyZone
 
 func _ready() -> void:
 	health.setup(stats.max_health)
+	health_bar.value = 1
 	pass 
 	
 func select_enemy() -> void:
@@ -53,4 +55,9 @@ func _on_detect_area_2d_body_entered(body: Node2D) -> void:
 
 func _on_detect_area_2d_body_exited(body: Node2D) -> void:
 	fsm.transition_to("Wander")
+	pass # Replace with function body.
+
+
+func _on_health_on_health_changed(current_health: float) -> void:
+	health_bar.value = current_health / stats.max_health
 	pass # Replace with function body.
