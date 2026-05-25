@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 EventBus="*uid://c22powuarquxk"
 InventoryGlobal="*uid://dut14ym68h5i7"
 EquipmentGlobal="*uid://ccvki2vj2547a"
+EffectsGlobal="*uid://c2trtw83a0kns"
 
 [display]
 

@@ -56,6 +56,7 @@ func set_up() -> void:
 	exp.setup(base_exp, exp_multiplier)
 	exp.on_next_level.connect(EventBus.on_player_new_level.emit)
 	exp.on_experience_updated.connect(EventBus.on_player_stats_updated.emit)
+	exp.on_new_level_reached.connect(_on_new_level_reached)
 
 	stats.on_stat_upgrade.connect(_on_stat_upgrade)
 	pass	
@@ -88,6 +89,10 @@ func _on_stat_upgrade(type: Stats.Type) -> void:
 	
 	exp.consume_points()
 	EventBus.on_player_stats_updated.emit()
+	pass
+	
+func _on_new_level_reached()	 -> void:
+	EffectsGlobal.create_new_level_fx(self.global_position)
 	pass
 	
 	

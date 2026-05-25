@@ -9,6 +9,7 @@ var exp_multiplier: float
 
 signal on_next_level(current_exp: float, next_level_exp: float)
 signal on_experience_updated
+signal on_new_level_reached
 
 func setup(base_exp: float, multiplier: float) -> void:
 	next_level_exp = base_exp
@@ -20,6 +21,7 @@ func add_exp(value: float) -> void:
 	
 	while current_exp >= next_level_exp:
 		_level_up()
+		on_new_level_reached.emit()
 		
 	on_next_level.emit(current_exp, next_level_exp)	
 	pass		
