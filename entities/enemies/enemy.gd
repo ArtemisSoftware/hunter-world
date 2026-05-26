@@ -1,10 +1,10 @@
 class_name Enemy extends Area2D
 
 @export var stats: EnemyStatsRes
+@export var loot: Array[LootRes]
 
 @onready var selector: Sprite2D = $Selector
 @onready var health: Health = $Health
-
 @onready var fsm: FSM = $FSM
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var health_bar: ProgressBar = $HealthBar
@@ -45,6 +45,20 @@ func update_animation(direction: Vector2) -> void:
 			animated_sprite_2d.play("move_up")		
 			
 	pass	
+	
+func _drop_loot() -> void:
+	var random_data: LootRes = loot.pick_random()
+	var drop_item: LootDrop = LootGlobal.LOOT.instantiate()
+	
+	var away_direction: Vector2 = (global_position - EventBus.player.global_position).normalized()
+	var drop_position: Vector2 = global_position + away_direction
+	
+	drop_item.load_item(random_data)
+	drop_item.global_position = drop_position
+	get_tree().root.call_deferred("add_child", drop_item)
+	
+	on_death.emit()
+	pass	
 
 
 func _on_detect_area_2d_body_entered(body: Node2D) -> void:
@@ -70,6 +84,7 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 
 
 func _on_health_on_death() -> void:
-	on_death.emit()
+	_drop_loot()
+	EventBus.player.exp.add_exp(stats.exp_amount)
 	queue_free()
 	pass # Replace with function body.

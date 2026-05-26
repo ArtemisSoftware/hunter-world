@@ -4,12 +4,27 @@
 [ext_resource type="Script" uid="uid://btivq8e7lxbfw" path="res://entities/enemies/enemy.gd" id="1_twyc1"]
 [ext_resource type="Texture2D" uid="uid://cggjjnmhe27ix" path="res://entities/enemies/sprites/SpriteSheet.png" id="2_twyc1"]
 [ext_resource type="Resource" uid="uid://b215y142uqtdg" path="res://core/components/resources/enemies/enemy_rat_stats.tres" id="2_w4yt1"]
+[ext_resource type="Script" uid="uid://blwhkcsxgpi2m" path="res://core/components/resources/loot_res.gd" id="3_nrfwl"]
 [ext_resource type="Texture2D" uid="uid://cd7un48k30yha" path="res://hud/sprites/Selector.png" id="3_w4yt1"]
+[ext_resource type="Resource" uid="uid://cnhathoc7pkm3" path="res://data/potions/hp_potion.tres" id="4_5xow2"]
 [ext_resource type="PackedScene" uid="uid://bj8i27kk1yq5j" path="res://core/components/health.tscn" id="4_ipr6v"]
+[ext_resource type="Resource" uid="uid://dgpq7ocveivio" path="res://data/food/nut.tres" id="5_xmuku"]
 [ext_resource type="Script" uid="uid://3wpqv7xj45x0" path="res://core/fsm/fsm.gd" id="7_gj3y3"]
 [ext_resource type="Script" uid="uid://cfatlcs1lnhl1" path="res://entities/enemies/states/enemy_wander_state.gd" id="8_56i32"]
 [ext_resource type="Script" uid="uid://crknht25fbsiw" path="res://entities/enemies/states/enemy_follow_state.gd" id="9_56i32"]
 [ext_resource type="Script" uid="uid://bahdqmfshkp82" path="res://entities/enemies/states/enemy_attack_state.gd" id="10_sb13e"]
+
+[sub_resource type="Resource" id="Resource_2ggct"]
+script = ExtResource("3_nrfwl")
+item = ExtResource("4_5xow2")
+amount = 1
+metadata/_custom_type_script = "uid://blwhkcsxgpi2m"
+
+[sub_resource type="Resource" id="Resource_wy1il"]
+script = ExtResource("3_nrfwl")
+item = ExtResource("5_xmuku")
+amount = 2
+metadata/_custom_type_script = "uid://blwhkcsxgpi2m"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gj3y3"]
 atlas = ExtResource("2_twyc1")
@@ -175,6 +190,7 @@ corner_radius_bottom_left = 3
 collision_layer = 4
 script = ExtResource("1_twyc1")
 stats = ExtResource("2_w4yt1")
+loot = Array[ExtResource("3_nrfwl")]([SubResource("Resource_2ggct"), SubResource("Resource_wy1il")])
 
 [node name="Shadow" type="Sprite2D" parent="." unique_id=1970569315]
 self_modulate = Color(0.67058825, 0.67058825, 0.67058825, 0.41568628)

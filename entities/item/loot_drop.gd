@@ -23,6 +23,11 @@ func _load_item(slot: SlotRes) -> void:
 	item = slot.item
 	amount = slot.quantity
 	pass 
+	
+func load_item(loot: LootRes) -> void:
+	item = loot.item
+	amount = loot.amount
+	pass 	
 
 func _shine() -> void:
 	var shine_tween := create_tween().set_loops()
