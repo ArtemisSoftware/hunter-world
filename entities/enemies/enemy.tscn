@@ -234,6 +234,8 @@ script = ExtResource("9_56i32")
 [node name="Attack" type="Node" parent="FSM" unique_id=1815546401]
 script = ExtResource("10_sb13e")
 
+[connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="body_entered" from="DetectArea2D" to="." method="_on_detect_area_2d_body_entered"]
 [connection signal="body_exited" from="DetectArea2D" to="." method="_on_detect_area_2d_body_exited"]
+[connection signal="on_death" from="Health" to="." method="_on_health_on_death"]
 [connection signal="on_health_changed" from="Health" to="." method="_on_health_on_health_changed"]

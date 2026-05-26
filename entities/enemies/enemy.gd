@@ -61,3 +61,15 @@ func _on_detect_area_2d_body_exited(body: Node2D) -> void:
 func _on_health_on_health_changed(current_health: float) -> void:
 	health_bar.value = current_health / stats.max_health
 	pass # Replace with function body.
+
+
+func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT:
+		EventBus.player.selected_enemy = self
+	pass
+
+
+func _on_health_on_death() -> void:
+	on_death.emit()
+	queue_free()
+	pass # Replace with function body.

@@ -3,7 +3,7 @@ class_name EnemyZone extends Area2D
 
 @export var enemy_scene: PackedScene
 @export var spawn_rate: float = 3.0
-@export var max_enemies: int = 5
+@export var max_enemies: int = 1
 
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 @onready var timer: Timer = $Timer

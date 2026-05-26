@@ -26,8 +26,12 @@ class_name Player extends CharacterBody2D
 
 
 var last_direction: String = "down"	
-
-
+var selected_enemy: Enemy:
+	set(value):
+		if selected_enemy:
+			selected_enemy.deselect_enemy()
+		selected_enemy = value
+		selected_enemy.select_enemy()
 
 func _ready() -> void:
 	
@@ -167,3 +171,11 @@ func _on_mana_on_mana_changed(current_mana: float) -> void:
 	EventBus.on_player_mana_updated.emit(current_mana, stats.max_mana)
 	pass
 #endregion
+
+
+func _on_enemy_attack_area_area_entered(area: Area2D) -> void:
+	var damage = get_damage()
+	(area as Enemy).health.take_damage(damage)
+	EffectsGlobal.create_damage_fx(area.global_position)
+	EffectsGlobal.create_damage_text(area.global_position, damage)
+	pass # Replace with function body.
