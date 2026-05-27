@@ -1,9 +1,32 @@
 class_name SkillButton extends Button
 
+@export var is_free: bool
+@export var skill_info: SkillRes
 
-# Called when the node enters the scene tree for the first time.
+@onready var lock: TextureRect = $Lock
+@onready var skill_icon: TextureRect = $SkillIcon
+
+var skill: SkillRes
+var is_unlocked: bool
+
 func _ready() -> void:
-	pass # Replace with function body.
+	enable_skill(false)
+	
+	if skill_info: _load_data(skill_info)
+	if is_free: enable_skill(true)
+	pass
+
+func _load_data(skill: SkillRes) -> void:
+	
+	self.skill = skill
+	skill_icon.texture = skill_info.icon
+	pass
+
+func enable_skill(value: bool) -> void:
+	skill_icon.modulate = Color.WHITE if value else Color("787878")
+	lock.visible = not value
+	pass
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

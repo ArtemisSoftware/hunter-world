@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bc1pbeevau1nv" path="res://hud/components/skill_button.tscn" id="1_isdyg"]
 [ext_resource type="Script" uid="uid://gfvmjoqc6cj" path="res://hud/loadout/skills_panel.gd" id="1_viulk"]
+[ext_resource type="Resource" uid="uid://bbitjiq0bdby3" path="res://entities/player/skills/skill_shuriken.tres" id="3_exu7m"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_is8n4"]
 bg_color = Color(0.14901961, 0.16470589, 0.20784314, 1)
@@ -54,6 +55,8 @@ alignment = 1
 
 [node name="SkillButton" parent="MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer" unique_id=865249352 instance=ExtResource("1_isdyg")]
 layout_mode = 2
+is_free = true
+skill_info = ExtResource("3_exu7m")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/VBoxContainer" unique_id=795703707]
 layout_mode = 2

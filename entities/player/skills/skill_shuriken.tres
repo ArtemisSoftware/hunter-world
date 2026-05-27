@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="SkillRes" format=3 uid="uid://bbitjiq0bdby3"]
+
+[ext_resource type="Texture2D" uid="uid://b5i85ea11brft" path="res://entities/player/skills/sprites/Shuriken.png" id="1_ges8k"]
+[ext_resource type="Script" uid="uid://cee5yi6ic0b6w" path="res://entities/player/skills/skill_res.gd" id="1_h1ksc"]
+
+[resource]
+script = ExtResource("1_h1ksc")
+mana_cost = 2.0
+base_damage = 3.0
+id = 11
+icon = ExtResource("1_ges8k")
+name = "Shuriken Skill"
+description = "Throws spinning shu"
+metadata/_custom_type_script = "uid://cee5yi6ic0b6w"

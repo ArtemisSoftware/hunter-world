@@ -47,7 +47,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_em0cx")
 theme_override_styles/hover = SubResource("StyleBoxFlat_gcgxw")
 script = ExtResource("1_2b00w")
 
-[node name="Icon" type="TextureRect" parent="." unique_id=546185411]
+[node name="SkillIcon" type="TextureRect" parent="." unique_id=546185411]
 modulate = Color(0.43776295, 0.43776292, 0.4377629, 1)
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 1

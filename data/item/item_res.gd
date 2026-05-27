@@ -18,4 +18,5 @@ enum Identifier {
 	NUT_FOOD,
 	MEAT_FOOD,
 	HONEY_FOOD,
+	SHURIKEN
 }
