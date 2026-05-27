@@ -19,6 +19,7 @@
 [ext_resource type="Resource" uid="uid://cwj4chtg7px2g" path="res://data/equipment/ring_common.tres" id="17_busg1"]
 [ext_resource type="Resource" uid="uid://yavrt1hmjo30" path="res://data/equipment/weapon_common.tres" id="18_pm63g"]
 [ext_resource type="PackedScene" uid="uid://cpfcopxkll4il" path="res://world/town/enemyzones/town_enemy_zone_1.tscn" id="19_n3h5c"]
+[ext_resource type="PackedScene" uid="uid://drbcbsbfsukb7" path="res://world/town/enemyzones/town_enemy_zone_wild.tscn" id="20_pm63g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mxda2"]
 texture = ExtResource("1_j8u2a")
@@ -3617,5 +3618,10 @@ item = ExtResource("18_pm63g")
 [node name="TownEnemyZone1" parent="EnemyZones" unique_id=1384719465 instance=ExtResource("19_n3h5c")]
 position = Vector2(699, -32)
 
+[node name="TownEnemyZoneWild" parent="EnemyZones" unique_id=807781979 instance=ExtResource("20_pm63g")]
+position = Vector2(1236, 50)
+
 [node name="Marker2D" type="Marker2D" parent="." unique_id=129139763]
 position = Vector2(713, 122)
+
+[node name="Enemies" type="Node2D" parent="." unique_id=340230796]

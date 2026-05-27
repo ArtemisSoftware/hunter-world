@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://drbcbsbfsukb7"]
+
+[ext_resource type="PackedScene" uid="uid://cpfcopxkll4il" path="res://world/town/enemyzones/town_enemy_zone_1.tscn" id="1_kmq5b"]
+[ext_resource type="PackedScene" uid="uid://csdokgeuhlbld" path="res://entities/enemies/common/enemy_eye.tscn" id="2_m6xjh"]
+
+[node name="TownEnemyZoneWild" unique_id=1384719465 instance=ExtResource("1_kmq5b")]
+enemy_scene = ExtResource("2_m6xjh")
+max_enemies = 8

@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://b0hy4plcpxr78" path="res://entities/enemies/enemy.tscn" id="2_yonvs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_47vde"]
-size = Vector2(163, 77)
+size = Vector2(163, 170.5)
 
 [node name="TownEnemyZone1" type="Area2D" unique_id=1384719465]
 script = ExtResource("1_qwpi8")
