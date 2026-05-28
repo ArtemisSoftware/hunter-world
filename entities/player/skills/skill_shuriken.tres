@@ -9,6 +9,6 @@ mana_cost = 2.0
 base_damage = 3.0
 id = 11
 icon = ExtResource("1_ges8k")
-name = "Shuriken Skill"
+name = "Shuriken"
 description = "Throws spinning shu"
 metadata/_custom_type_script = "uid://cee5yi6ic0b6w"

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="SkillRes" format=3 uid="uid://cixvw71cijr3f"]
+
+[ext_resource type="Texture2D" uid="uid://dp7weh54fvkoa" path="res://entities/player/skills/sprites/OrbPlant.png" id="1_3mxkh"]
+[ext_resource type="Script" uid="uid://cee5yi6ic0b6w" path="res://entities/player/skills/skill_res.gd" id="2_1sijt"]
+
+[resource]
+script = ExtResource("2_1sijt")
+mana_cost = 3.5
+base_damage = 3.0
+id = 15
+icon = ExtResource("1_3mxkh")
+name = "Rock Spike"
+description = "Spikes rise from the ground"
+price = 200
+metadata/_custom_type_script = "uid://cee5yi6ic0b6w"

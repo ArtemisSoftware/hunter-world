@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="SkillRes" format=3 uid="uid://dqgq2cmnv0ltk"]
+
+[ext_resource type="Texture2D" uid="uid://cxqy5vq2cg131" path="res://entities/player/skills/sprites/OrbWater.png" id="1_o7dxn"]
+[ext_resource type="Script" uid="uid://cee5yi6ic0b6w" path="res://entities/player/skills/skill_res.gd" id="2_hpm7b"]
+
+[resource]
+script = ExtResource("2_hpm7b")
+mana_cost = 1.5
+base_damage = 2.0
+id = 18
+icon = ExtResource("1_o7dxn")
+name = "Water splash"
+description = "Releases a splash of water"
+price = 50
+metadata/_custom_type_script = "uid://cee5yi6ic0b6w"

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="SkillRes" format=3 uid="uid://bbg8op5e56wwx"]
+
+[ext_resource type="Texture2D" uid="uid://dowv8pln36th7" path="res://entities/player/skills/sprites/WaterCanon.png" id="1_4jsb1"]
+[ext_resource type="Script" uid="uid://cee5yi6ic0b6w" path="res://entities/player/skills/skill_res.gd" id="2_0eu5k"]
+
+[resource]
+script = ExtResource("2_0eu5k")
+mana_cost = 3.0
+base_damage = 2.4
+id = 17
+icon = ExtResource("1_4jsb1")
+name = "Water canon"
+description = "Creates a water cannon"
+price = 90
+metadata/_custom_type_script = "uid://cee5yi6ic0b6w"

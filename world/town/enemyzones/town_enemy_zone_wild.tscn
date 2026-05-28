@@ -6,3 +6,6 @@
 [node name="TownEnemyZoneWild" unique_id=1384719465 instance=ExtResource("1_kmq5b")]
 enemy_scene = ExtResource("2_m6xjh")
 max_enemies = 8
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=1593780901]
+position = Vector2(18.25, -27.125)
