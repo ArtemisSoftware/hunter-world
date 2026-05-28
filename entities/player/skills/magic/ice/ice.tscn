@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://ci25cvpyucs87"]
+
+[ext_resource type="PackedScene" uid="uid://crlucq6bu2y58" path="res://entities/player/skills/magic/magic_skill.tscn" id="1_qvple"]
+[ext_resource type="Texture2D" uid="uid://d1ip6ovu1kdpv" path="res://entities/player/skills/magic/ice/sprites/SpriteSheetB.png" id="2_nvagu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ip4gy"]
+atlas = ExtResource("2_nvagu")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5d4wh"]
+atlas = ExtResource("2_nvagu")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_krdkw"]
+atlas = ExtResource("2_nvagu")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ah2i"]
+atlas = ExtResource("2_nvagu")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jd4bj"]
+atlas = ExtResource("2_nvagu")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3rgp6"]
+atlas = ExtResource("2_nvagu")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i2ujd"]
+atlas = ExtResource("2_nvagu")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xcpf8"]
+atlas = ExtResource("2_nvagu")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lvf5y"]
+atlas = ExtResource("2_nvagu")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7evyd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ip4gy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5d4wh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_krdkw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ah2i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jd4bj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3rgp6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i2ujd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xcpf8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lvf5y")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[node name="Ice" unique_id=263029236 instance=ExtResource("1_qvple")]
+
+[node name="AnimatedSprite2D" parent="." index="0" unique_id=1780619070]
+sprite_frames = SubResource("SpriteFrames_7evyd")
+animation = &"default"

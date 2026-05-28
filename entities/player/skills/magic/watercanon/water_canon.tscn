@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://bmfe52p3nqlyf"]
+
+[ext_resource type="PackedScene" uid="uid://crlucq6bu2y58" path="res://entities/player/skills/magic/magic_skill.tscn" id="1_khhyj"]
+[ext_resource type="Texture2D" uid="uid://bqaw58e3btjjt" path="res://entities/player/skills/magic/watercanon/sprites/SpriteSheet.png" id="2_ooxqn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u7cd4"]
+atlas = ExtResource("2_ooxqn")
+region = Rect2(0, 0, 30, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_88bnj"]
+atlas = ExtResource("2_ooxqn")
+region = Rect2(30, 0, 30, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sxplm"]
+atlas = ExtResource("2_ooxqn")
+region = Rect2(60, 0, 30, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_twegi"]
+atlas = ExtResource("2_ooxqn")
+region = Rect2(90, 0, 30, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yfr6e"]
+atlas = ExtResource("2_ooxqn")
+region = Rect2(120, 0, 30, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6wpnp"]
+atlas = ExtResource("2_ooxqn")
+region = Rect2(150, 0, 30, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gh3a0"]
+atlas = ExtResource("2_ooxqn")
+region = Rect2(180, 0, 30, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vk3x0"]
+atlas = ExtResource("2_ooxqn")
+region = Rect2(210, 0, 30, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7inga"]
+atlas = ExtResource("2_ooxqn")
+region = Rect2(240, 0, 30, 41)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wxnnm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u7cd4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_88bnj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sxplm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_twegi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yfr6e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6wpnp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gh3a0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vk3x0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7inga")
+}],
+"loop": false,
+"name": &"default",
+"speed": 15.0
+}]
+
+[node name="WaterCanon" unique_id=263029236 instance=ExtResource("1_khhyj")]
+
+[node name="AnimatedSprite2D" parent="." index="0" unique_id=1780619070]
+sprite_frames = SubResource("SpriteFrames_wxnnm")
+animation = &"default"
+autoplay = "default"

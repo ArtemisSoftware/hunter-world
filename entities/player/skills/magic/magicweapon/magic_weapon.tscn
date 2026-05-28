@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://coemnngkajolh"]
+
+[ext_resource type="PackedScene" uid="uid://crlucq6bu2y58" path="res://entities/player/skills/magic/magic_skill.tscn" id="1_gdifc"]
+[ext_resource type="Texture2D" uid="uid://b2orm3y55vcc2" path="res://entities/player/skills/magic/magicweapon/sprites/SpriteSheet.png" id="2_y2kd6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p4lrp"]
+atlas = ExtResource("2_y2kd6")
+region = Rect2(0, 0, 42, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m4eeg"]
+atlas = ExtResource("2_y2kd6")
+region = Rect2(42, 0, 42, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0mpoi"]
+atlas = ExtResource("2_y2kd6")
+region = Rect2(84, 0, 42, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0p1c0"]
+atlas = ExtResource("2_y2kd6")
+region = Rect2(126, 0, 42, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6secd"]
+atlas = ExtResource("2_y2kd6")
+region = Rect2(168, 0, 42, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_inl87"]
+atlas = ExtResource("2_y2kd6")
+region = Rect2(210, 0, 42, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jxlp0"]
+atlas = ExtResource("2_y2kd6")
+region = Rect2(252, 0, 42, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ohkuc"]
+atlas = ExtResource("2_y2kd6")
+region = Rect2(294, 0, 42, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7knrk"]
+atlas = ExtResource("2_y2kd6")
+region = Rect2(336, 0, 42, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_746o2"]
+atlas = ExtResource("2_y2kd6")
+region = Rect2(378, 0, 42, 35)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cuclm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p4lrp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m4eeg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0mpoi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0p1c0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6secd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_inl87")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jxlp0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ohkuc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7knrk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_746o2")
+}],
+"loop": false,
+"name": &"default",
+"speed": 15.0
+}]
+
+[node name="MagicWeapon" unique_id=263029236 instance=ExtResource("1_gdifc")]
+
+[node name="AnimatedSprite2D" parent="." index="0" unique_id=1780619070]
+sprite_frames = SubResource("SpriteFrames_cuclm")
+animation = &"default"
+autoplay = "default"

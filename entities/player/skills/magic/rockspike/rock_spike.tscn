@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://d1r1800uirm52"]
+
+[ext_resource type="PackedScene" uid="uid://crlucq6bu2y58" path="res://entities/player/skills/magic/magic_skill.tscn" id="1_a5ja4"]
+[ext_resource type="Texture2D" uid="uid://btemiv7to8mfa" path="res://entities/player/skills/magic/rockspike/sprites/SpriteSheet.png" id="2_2p25o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gq235"]
+atlas = ExtResource("2_2p25o")
+region = Rect2(0, 0, 54, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wb0ix"]
+atlas = ExtResource("2_2p25o")
+region = Rect2(54, 0, 54, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y6h8w"]
+atlas = ExtResource("2_2p25o")
+region = Rect2(108, 0, 54, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aupg8"]
+atlas = ExtResource("2_2p25o")
+region = Rect2(162, 0, 54, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e5o0o"]
+atlas = ExtResource("2_2p25o")
+region = Rect2(216, 0, 54, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_niswe"]
+atlas = ExtResource("2_2p25o")
+region = Rect2(270, 0, 54, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ldymr"]
+atlas = ExtResource("2_2p25o")
+region = Rect2(324, 0, 54, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_74bcq"]
+atlas = ExtResource("2_2p25o")
+region = Rect2(378, 0, 54, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dsph7"]
+atlas = ExtResource("2_2p25o")
+region = Rect2(432, 0, 54, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ggs30"]
+atlas = ExtResource("2_2p25o")
+region = Rect2(486, 0, 54, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3ukfx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gq235")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wb0ix")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y6h8w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aupg8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e5o0o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_niswe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ldymr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_74bcq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dsph7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ggs30")
+}],
+"loop": false,
+"name": &"default",
+"speed": 15.0
+}]
+
+[node name="RockSpike" unique_id=263029236 instance=ExtResource("1_a5ja4")]
+
+[node name="AnimatedSprite2D" parent="." index="0" unique_id=1780619070]
+sprite_frames = SubResource("SpriteFrames_3ukfx")
+animation = &"default"
+autoplay = "default"
