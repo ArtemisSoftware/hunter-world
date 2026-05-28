@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cpi22efxvf5d0"]
 
+[ext_resource type="Script" uid="uid://c45oqd660qwqr" path="res://hud/actionbars/skill_bar.gd" id="1_a51n5"]
 [ext_resource type="PackedScene" uid="uid://bf1f5qtgsggih" path="res://hud/components/equipped_skill_button.tscn" id="1_jrr7c"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1kkc0"]
@@ -13,7 +14,7 @@ corner_radius_top_right = 3
 corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 
-[node name="SkillBar" type="Panel" unique_id=776008566]
+[node name="SkillBar" type="Panel" unique_id=776008566 node_paths=PackedStringArray("skill_hot_keys")]
 custom_minimum_size = Vector2(234, 66)
 anchors_preset = 3
 anchor_left = 1.0
@@ -27,6 +28,8 @@ offset_bottom = -30.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_1kkc0")
+script = ExtResource("1_a51n5")
+skill_hot_keys = [NodePath("MarginContainer/HBoxContainer/EquippedSkillButton"), NodePath("MarginContainer/HBoxContainer/EquippedSkillButton2"), NodePath("MarginContainer/HBoxContainer/EquippedSkillButton3"), NodePath("MarginContainer/HBoxContainer/EquippedSkillButton4")]
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=493274005]
 layout_mode = 1

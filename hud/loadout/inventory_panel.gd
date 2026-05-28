@@ -21,6 +21,7 @@ func _ready() -> void:
 	pass
 	
 func _process(delta: float) -> void:
+	gold_label.text = str(EventBus.coins)
 	if grabbed_slot.visible:
 		grabbed_slot.global_position = get_global_mouse_position()
 	pass	

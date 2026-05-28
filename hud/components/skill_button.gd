@@ -13,7 +13,9 @@ func _ready() -> void:
 	enable_skill(false)
 	
 	if skill_info: _load_data(skill_info)
-	if is_free: enable_skill(true)
+	if is_free: 
+		is_unlocked = true
+		enable_skill(true)
 	pass
 
 func _load_data(skill: SkillRes) -> void:
@@ -31,4 +33,17 @@ func enable_skill(value: bool) -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	pass
+
+
+func _on_pressed() -> void:
+	
+	if not is_unlocked:
+		if EventBus.coins >= skill.price:
+			EventBus.coins -= skill.price
+			is_unlocked = true
+			enable_skill(true)
+	else:
+		HudGlobal.hud.equip_skill_to_empty_slot(skill)		
+	
 	pass
