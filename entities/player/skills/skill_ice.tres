@@ -1,12 +1,14 @@
 [gd_resource type="Resource" script_class="SkillRes" format=3 uid="uid://d36u00uhyiyyy"]
 
 [ext_resource type="Texture2D" uid="uid://ci2c52aogaouv" path="res://entities/player/skills/sprites/Snow.png" id="1_71qfb"]
+[ext_resource type="PackedScene" uid="uid://ci25cvpyucs87" path="res://entities/player/skills/magic/ice/ice.tscn" id="1_bjyam"]
 [ext_resource type="Script" uid="uid://cee5yi6ic0b6w" path="res://entities/player/skills/skill_res.gd" id="2_bjyam"]
 
 [resource]
 script = ExtResource("2_bjyam")
 mana_cost = 1.2
 base_damage = 1.8
+explosion_effect = ExtResource("1_bjyam")
 id = 12
 icon = ExtResource("1_71qfb")
 name = "Ice"

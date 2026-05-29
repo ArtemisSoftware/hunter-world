@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="SkillRes" format=3 uid="uid://bbg8op5e56wwx"]
 
+[ext_resource type="PackedScene" uid="uid://bmfe52p3nqlyf" path="res://entities/player/skills/magic/watercanon/water_canon.tscn" id="1_0eu5k"]
 [ext_resource type="Texture2D" uid="uid://dowv8pln36th7" path="res://entities/player/skills/sprites/WaterCanon.png" id="1_4jsb1"]
 [ext_resource type="Script" uid="uid://cee5yi6ic0b6w" path="res://entities/player/skills/skill_res.gd" id="2_0eu5k"]
 
@@ -7,6 +8,7 @@
 script = ExtResource("2_0eu5k")
 mana_cost = 3.0
 base_damage = 2.4
+explosion_effect = ExtResource("1_0eu5k")
 id = 17
 icon = ExtResource("1_4jsb1")
 name = "Water canon"

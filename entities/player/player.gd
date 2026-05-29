@@ -38,6 +38,14 @@ func _ready() -> void:
 	pass
 	
 func _input(event: InputEvent) -> void:
+	
+	if event.is_action_pressed("skill_1"): use_skill(0)
+	elif event.is_action_pressed("skill_2"): use_skill(1)
+	elif event.is_action_pressed("skill_3"): use_skill(2)
+	elif event.is_action_pressed("skill_4"): use_skill(3)
+	
+	
+	#for debug
 	if event.is_action_pressed("ui_accept"):
 		exp.add_exp(10)
 		#health.take_damage(1.0)
@@ -77,12 +85,12 @@ func reset_mana() -> void:
 	
 func use_mana(value: float) -> void:
 	mana.use_mana(value)
-	EventBus.on_player_mana_updated.emit(stats.mana.current_mana, stats.max_mana) #TODO: dont understand the use of this
+	EventBus.on_player_mana_updated.emit(mana.current_mana, stats.max_mana) #TODO: dont understand the use of this
 	pass		
 	
 func add_mana(value: float) -> void:
 	mana.add_mana(value)
-	EventBus.on_player_mana_updated.emit(stats.mana.current_mana, stats.max_mana) #TODO: dont understand the use of this
+	EventBus.on_player_mana_updated.emit(mana.current_mana, stats.max_mana) #TODO: dont understand the use of this
 	pass			
 
 func _on_stat_upgrade(type: Stats.Type) -> void:
@@ -113,6 +121,25 @@ func get_damage(skill_dmg: float = 0.0) -> float:
 		total_dmg *= (1.0 + (stats.critical_damage / 100.0))
 		
 	return total_dmg
+	pass	
+	
+	
+func use_skill(index: int) -> void:
+	if index < 0 or index >= HudGlobal.skill_slots.size(): return
+	
+	var skill: SkillRes = HudGlobal.skill_slots[index]
+	if not skill: return
+	if not selected_enemy: return
+	
+	if mana.can_use_mana(skill.mana_cost):
+		use_mana(skill.mana_cost)
+		var total_damage = get_damage(skill.base_damage)
+		selected_enemy.health.take_damage(total_damage)
+		
+		var explosion_effect: Node2D = skill.explosion_effect.instantiate()
+		explosion_effect.global_position = selected_enemy.global_position
+		get_tree().root.add_child(explosion_effect)
+		EffectsGlobal.create_damage_text(selected_enemy.global_position, total_damage)
 	pass	
 	
 #----------------------------

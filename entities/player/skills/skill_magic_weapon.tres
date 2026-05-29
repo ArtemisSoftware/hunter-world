@@ -1,11 +1,13 @@
 [gd_resource type="Resource" script_class="SkillRes" format=3 uid="uid://bh3u2mlw5j6dg"]
 
 [ext_resource type="Texture2D" uid="uid://bmxhewwqcgx4a" path="res://entities/player/skills/sprites/MagicWeapon.png" id="1_f5wow"]
+[ext_resource type="PackedScene" uid="uid://coemnngkajolh" path="res://entities/player/skills/magic/magicweapon/magic_weapon.tscn" id="1_k5ubl"]
 [ext_resource type="Script" uid="uid://cee5yi6ic0b6w" path="res://entities/player/skills/skill_res.gd" id="2_k5ubl"]
 
 [resource]
 script = ExtResource("2_k5ubl")
 mana_cost = 2.0
+explosion_effect = ExtResource("1_k5ubl")
 id = 19
 icon = ExtResource("1_f5wow")
 name = "Magic weapon"

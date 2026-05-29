@@ -1,12 +1,14 @@
 [gd_resource type="Resource" script_class="SkillRes" format=3 uid="uid://ckx7k3l03c6ua"]
 
 [ext_resource type="Texture2D" uid="uid://8p0yhorfah6i" path="res://entities/player/skills/sprites/Kunai.png" id="1_1w0cn"]
+[ext_resource type="PackedScene" uid="uid://gt71ecw5alei" path="res://entities/player/skills/magic/kunai/kunai.tscn" id="1_31vd0"]
 [ext_resource type="Script" uid="uid://cee5yi6ic0b6w" path="res://entities/player/skills/skill_res.gd" id="2_ljwjq"]
 
 [resource]
 script = ExtResource("2_ljwjq")
 mana_cost = 1.5
 base_damage = 2.5
+explosion_effect = ExtResource("1_31vd0")
 id = 13
 icon = ExtResource("1_1w0cn")
 name = "Shuriken Kunai"

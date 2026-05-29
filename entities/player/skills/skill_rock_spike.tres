@@ -1,14 +1,16 @@
 [gd_resource type="Resource" script_class="SkillRes" format=3 uid="uid://cixvw71cijr3f"]
 
-[ext_resource type="Texture2D" uid="uid://dp7weh54fvkoa" path="res://entities/player/skills/sprites/OrbPlant.png" id="1_3mxkh"]
+[ext_resource type="PackedScene" uid="uid://d1r1800uirm52" path="res://entities/player/skills/magic/rockspike/rock_spike.tscn" id="1_1sijt"]
 [ext_resource type="Script" uid="uid://cee5yi6ic0b6w" path="res://entities/player/skills/skill_res.gd" id="2_1sijt"]
+[ext_resource type="Texture2D" uid="uid://cm3ev53upofht" path="res://entities/player/skills/sprites/RockSpike.png" id="2_b1goi"]
 
 [resource]
 script = ExtResource("2_1sijt")
 mana_cost = 3.5
 base_damage = 3.0
+explosion_effect = ExtResource("1_1sijt")
 id = 15
-icon = ExtResource("1_3mxkh")
+icon = ExtResource("2_b1goi")
 name = "Rock Spike"
 description = "Spikes rise from the ground"
 price = 200

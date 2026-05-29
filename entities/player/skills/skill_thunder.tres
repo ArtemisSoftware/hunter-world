@@ -1,12 +1,14 @@
 [gd_resource type="Resource" script_class="SkillRes" format=3 uid="uid://wit85ecmas8n"]
 
 [ext_resource type="Texture2D" uid="uid://b0l7y2ofqkfey" path="res://entities/player/skills/sprites/BookThunder.png" id="1_44dgs"]
+[ext_resource type="PackedScene" uid="uid://2fshyoj3jkpx" path="res://entities/player/skills/magic/thunder/thunder.tscn" id="1_vm70w"]
 [ext_resource type="Script" uid="uid://cee5yi6ic0b6w" path="res://entities/player/skills/skill_res.gd" id="2_vm70w"]
 
 [resource]
 script = ExtResource("2_vm70w")
 mana_cost = 3.0
 base_damage = 2.6
+explosion_effect = ExtResource("1_vm70w")
 id = 16
 icon = ExtResource("1_44dgs")
 name = "Thunder"

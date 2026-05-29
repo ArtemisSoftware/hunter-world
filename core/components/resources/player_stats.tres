@@ -4,4 +4,5 @@
 
 [resource]
 script = ExtResource("1_efq4i")
+max_mana = 20.0
 metadata/_custom_type_script = "uid://bql3p3a22mpib"

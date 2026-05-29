@@ -13,12 +13,20 @@ func setup(value: float) -> void:
 	
 
 func use_mana(value: float) -> void:
-	if current_mana <= 0:
-		return
+	if current_mana <= 0: return
+	if current_mana < value: return	
 		
 	current_mana = max(current_mana - value, 0)
 	on_mana_changed.emit(current_mana)
 	pass	
+	
+
+func can_use_mana(value: float) -> bool:
+	if current_mana <= 0: return false
+	if current_mana < value: return	false
+		
+	return true
+	pass		
 	
 func add_mana(value: float) -> void:	
 	current_mana = min(current_mana + value, _max_mana)

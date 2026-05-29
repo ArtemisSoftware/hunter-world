@@ -2,11 +2,13 @@
 
 [ext_resource type="Texture2D" uid="uid://b5i85ea11brft" path="res://entities/player/skills/sprites/Shuriken.png" id="1_ges8k"]
 [ext_resource type="Script" uid="uid://cee5yi6ic0b6w" path="res://entities/player/skills/skill_res.gd" id="1_h1ksc"]
+[ext_resource type="PackedScene" uid="uid://2v8nkqr1sc2s" path="res://entities/player/skills/magic/shuriken/shuriken.tscn" id="1_ogebc"]
 
 [resource]
 script = ExtResource("1_h1ksc")
 mana_cost = 2.0
 base_damage = 3.0
+explosion_effect = ExtResource("1_ogebc")
 id = 11
 icon = ExtResource("1_ges8k")
 name = "Shuriken"
