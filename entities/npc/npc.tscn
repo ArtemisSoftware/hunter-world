@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://cgretm070fsrv"]
+
+[ext_resource type="Script" uid="uid://c0r0lhnh0ed3r" path="res://entities/npc/npc.gd" id="1_e3lg2"]
+[ext_resource type="Texture2D" uid="uid://7hmoo8xcaoty" path="res://core/sprites/Shadow.png" id="2_7bf1a"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y6suo"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"idle_down",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wfxk4"]
+radius = 7.0
+
+[node name="Npc" type="Area2D" unique_id=1029844729]
+script = ExtResource("1_e3lg2")
+type = null
+movement = null
+
+[node name="Shadow" type="Sprite2D" parent="." unique_id=1647806398]
+self_modulate = Color(1, 1, 1, 0.5803922)
+scale = Vector2(1.5, 1.2)
+texture = ExtResource("2_7bf1a")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=733634769]
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_y6suo")
+animation = &"idle_down"
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=816766311]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1633961637]
+position = Vector2(0, -6)
+shape = SubResource("CircleShape2D_wfxk4")

@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://c7bk0kcs6aw5o"]
+
+[ext_resource type="PackedScene" uid="uid://cgretm070fsrv" path="res://entities/npc/npc.tscn" id="1_4gi78"]
+[ext_resource type="Texture2D" uid="uid://dyj486c5xnjl4" path="res://entities/npc/sprites/Samurai_SpriteSheet.png" id="2_gywep"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cfy2a"]
+atlas = ExtResource("2_gywep")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7vqd4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cfy2a")
+}],
+"loop": true,
+"name": &"idle_down",
+"speed": 5.0
+}]
+
+[node name="NpcSamurai" unique_id=1029844729 instance=ExtResource("1_4gi78")]
+
+[node name="AnimatedSprite2D" parent="." index="2" unique_id=733634769]
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_7vqd4")

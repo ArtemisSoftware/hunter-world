@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://drbcbsbfsukb7" path="res://world/town/enemyzones/town_enemy_zone_wild.tscn" id="20_pm63g"]
 [ext_resource type="PackedScene" uid="uid://cxcprvyvmakar" path="res://entities/enemies/common/enemy_mouse.tscn" id="20_t2xh5"]
 [ext_resource type="PackedScene" uid="uid://diq6bj8dow4s4" path="res://entities/enemies/common/enemy_spirit.tscn" id="21_pm63g"]
+[ext_resource type="PackedScene" uid="uid://c7bk0kcs6aw5o" path="res://entities/npc/people/npc_samurai.tscn" id="23_6ft51"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mxda2"]
 texture = ExtResource("1_j8u2a")
@@ -3634,3 +3635,8 @@ max_enemies = 1
 position = Vector2(713, 122)
 
 [node name="Enemies" type="Node2D" parent="." unique_id=340230796]
+
+[node name="Npc" type="Node2D" parent="." unique_id=172031945]
+
+[node name="NpcSamurai" parent="Npc" unique_id=1029844729 instance=ExtResource("23_6ft51")]
+position = Vector2(487, 285)
