@@ -16,8 +16,6 @@ radius = 7.0
 
 [node name="Npc" type="Area2D" unique_id=1029844729]
 script = ExtResource("1_e3lg2")
-type = null
-movement = null
 
 [node name="Shadow" type="Sprite2D" parent="." unique_id=1647806398]
 self_modulate = Color(1, 1, 1, 0.5803922)
@@ -34,3 +32,5 @@ animation = &"idle_down"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1633961637]
 position = Vector2(0, -6)
 shape = SubResource("CircleShape2D_wfxk4")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

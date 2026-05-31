@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="DialogueResource" format=3 uid="uid://bt063vy6i31hu"]
+
+[ext_resource type="Script" uid="uid://c06041b48hwav" path="res://dialogue/resource/dialogue_resource.gd" id="1_dp2gk"]
+[ext_resource type="Texture2D" uid="uid://fhq3w5rupa74" path="res://entities/npc/sprites/Samurai_Faceset.png" id="2_rtdq4"]
+
+[resource]
+script = ExtResource("1_dp2gk")
+speaker_name = "Kato"
+speaker_icon = ExtResource("2_rtdq4")
+text = Array[String](["Hello stranger.", "Dark times ahead..."])
+metadata/_custom_type_script = "uid://c06041b48hwav"

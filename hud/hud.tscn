@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://312aq4uyn1qq" path="res://hud/loadout/stats_panel.tscn" id="13_lfqsj"]
 [ext_resource type="PackedScene" uid="uid://bj31m6e3ixt6n" path="res://hud/loadout/skills_panel.tscn" id="14_lyvac"]
 [ext_resource type="PackedScene" uid="uid://bclukvvchgohb" path="res://hud/components/slot.tscn" id="17_02s75"]
+[ext_resource type="PackedScene" uid="uid://w67cj34ogylo" path="res://dialogue/dialogue_panel.tscn" id="18_put16"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1kkc0"]
 bg_color = Color(0.14901961, 0.16470589, 0.20784314, 1)
@@ -224,6 +225,9 @@ offset_right = 1007.0
 offset_bottom = 676.0
 mouse_filter = 2
 flat = true
+
+[node name="DialoguePanel" parent="." unique_id=669903239 instance=ExtResource("18_put16")]
+visible = false
 
 [connection signal="pressed" from="LoadoutBar/MarginContainer/HBoxContainer/EquipmentButton" to="." method="_on_equipment_button_pressed"]
 [connection signal="pressed" from="LoadoutBar/MarginContainer/HBoxContainer/InventoryButton" to="." method="_on_inventory_button_pressed"]

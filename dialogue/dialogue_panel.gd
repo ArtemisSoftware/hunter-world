@@ -1,7 +1,9 @@
 class_name DialoguePanel extends Control
 
 @onready var speaker_icon: TextureRect = $SpeakerIcon
-@onready var text: Label = $NinePatchRect/MarginContainer/Text
+#@onready var text: Label = $NinePatchRect/MarginContainer/Text
+@onready var text: Label = %Text
+@onready var speaker_name: Label = $NinePatchRect/MarginContainer/VBoxContainer/SpeakerName
 
 
 var current_dialogue: DialogueResource
@@ -20,6 +22,21 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+	
+
+func _input(event: InputEvent) -> void:
+	if not visible: return
+	
+	if event.is_action_pressed("ui_accept"):
+	#if event.is_action_pressed("interact") && DialogueGlobal.is_active: # TODO: I want to interact using keyboard
+		get_viewport().set_input_as_handled()
+		
+		if is_typing:
+			_complete_text_line()
+		else:
+			_next_text_line()	
+		
+	pass	
 
 func _on_dialogue_started(dialogue: DialogueResource) -> void:
 	current_dialogue = dialogue
@@ -34,8 +51,8 @@ func _show_line() ->	 void:
 		_end_dialogue()
 		return
 		
-	var line: String = current_dialogue.text[current_line_index]
-	text.text = current_dialogue.speaker_name + ":\n" + line
+	_show_speaker_name()
+	text.text = current_dialogue.text[current_line_index]
 	
 	text.visible_characters = 0
 	is_typing = true
@@ -49,9 +66,26 @@ func _show_line() ->	 void:
 	tween.finished.connect(func(): is_typing = false)
 	pass
 	
+func _show_speaker_name() -> void:
+	speaker_name.text = current_dialogue.speaker_name
+	pass	
+	
+func _complete_text_line() -> void:
+	if tween: tween.kill()
+	
+	text.visible_characters = -1
+	is_typing = false
+	pass
+	
+func _next_text_line() -> void:
+	current_line_index += 1
+	_show_line()
+	pass		
+	
 func _end_dialogue() ->	 void:
 	hide()
 	current_dialogue = null
 	DialogueGlobal.on_dialogue_finished.emit()
+	DialogueGlobal.is_active = false
 	pass
 	
