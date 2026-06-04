@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c7bk0kcs6aw5o"]
 
 [ext_resource type="PackedScene" uid="uid://cgretm070fsrv" path="res://entities/npc/npc.tscn" id="1_4gi78"]
+[ext_resource type="Resource" uid="uid://dthdff70lbmy2" path="res://entities/npc/people/npc_samurai_movement.tres" id="2_7vqd4"]
 [ext_resource type="Resource" uid="uid://bt063vy6i31hu" path="res://entities/npc/people/npc_samurai_dialogue.tres" id="2_cfy2a"]
 [ext_resource type="Texture2D" uid="uid://dyj486c5xnjl4" path="res://entities/npc/sprites/Samurai_SpriteSheet.png" id="2_gywep"]
 
@@ -20,7 +21,7 @@ animations = [{
 }]
 
 [node name="NpcSamurai" unique_id=1029844729 instance=ExtResource("1_4gi78")]
-type = 0
+movement = ExtResource("2_7vqd4")
 dialogue = ExtResource("2_cfy2a")
 
 [node name="AnimatedSprite2D" parent="." index="1" unique_id=733634769]

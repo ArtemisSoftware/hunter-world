@@ -2,9 +2,12 @@ class_name Town extends Node2D
 
 @export var player_scene: PackedScene
 @onready var marker_2d: Marker2D = $Marker2D
+@onready var navigation: TileMapLayer = %Navigation
+
 
 func _ready() -> void:
 	InventoryGlobal.on_inventory_used_item.connect(_on_inventory_used_item) #TODO: isto não deveria ser no player ou no hud??????
+	NpcGlobal.navigation = navigation
 	_create_player()
 	pass 
 

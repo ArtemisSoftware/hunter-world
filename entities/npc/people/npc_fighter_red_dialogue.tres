@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="DialogueResource" format=3 uid="uid://4b23asq4s6nd"]
+
+[ext_resource type="Script" uid="uid://c06041b48hwav" path="res://dialogue/resource/dialogue_resource.gd" id="1_p1vid"]
+[ext_resource type="Texture2D" uid="uid://bwhoi6ninjuy7" path="res://entities/npc/sprites/Fighter_red_Faceset.png" id="2_achjc"]
+
+[resource]
+script = ExtResource("1_p1vid")
+speaker_name = "Red Fighter"
+speaker_icon = ExtResource("2_achjc")
+text = Array[String](["Do not challenge me!"])
+metadata/_custom_type_script = "uid://c06041b48hwav"

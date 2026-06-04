@@ -23,6 +23,7 @@ EffectsGlobal="*uid://c2trtw83a0kns"
 LootGlobal="*uid://25t3cr20f2fm"
 HudGlobal="*uid://bbwnbyajvgfdu"
 DialogueGlobal="*uid://chjx80b8rfjuc"
+NpcGlobal="*uid://butxvr2m1ninw"
 
 [display]
 

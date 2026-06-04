@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cgretm070fsrv" path="res://entities/npc/npc.tscn" id="1_q42f2"]
 [ext_resource type="Texture2D" uid="uid://c488ab8yn8ltx" path="res://entities/npc/sprites/Fighter_red_SpriteSheet.png" id="2_blnaa"]
+[ext_resource type="Resource" uid="uid://p0skwwclmydf" path="res://entities/npc/people/npc_fighter_red_movement.tres" id="2_ta2kx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ta2kx"]
 atlas = ExtResource("2_blnaa")
@@ -187,8 +188,8 @@ animations = [{
 }]
 
 [node name="NpcFighterRed" unique_id=1029844729 instance=ExtResource("1_q42f2")]
+movement = ExtResource("2_ta2kx")
 
-[node name="AnimatedSprite2D" parent="." index="2" unique_id=733634769]
-position = Vector2(0, -8)
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=733634769]
 sprite_frames = SubResource("SpriteFrames_g5abe")
 animation = &"move_up"

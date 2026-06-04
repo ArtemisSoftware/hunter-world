@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="NpcMovementResource" format=3 uid="uid://p0skwwclmydf"]
+
+[ext_resource type="Script" uid="uid://bkio077xnc1p1" path="res://entities/npc/resources/npc_movement_resourse.gd" id="1_b7if1"]
+
+[resource]
+script = ExtResource("1_b7if1")
+can_move = true
+move_speed = 50.0
+wait_time = 10.0
+metadata/_custom_type_script = "uid://bkio077xnc1p1"
