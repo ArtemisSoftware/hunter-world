@@ -1,0 +1,99 @@
+[gd_scene format=3 uid="uid://b03plhdppqy5k"]
+
+[ext_resource type="StyleBox" uid="uid://wtrmw47lhv4e" path="res://hud/styles/loadout_panel_style.tres" id="1_cmgah"]
+[ext_resource type="PackedScene" uid="uid://dhf6xr3tkg8x" path="res://world/shops/components/shop_button.tscn" id="2_kayea"]
+[ext_resource type="Texture2D" uid="uid://brkbxbilm54kt" path="res://hud/sprites/GoldCoin.png" id="3_f3lw8"]
+
+[node name="ShopPanel" type="Control" unique_id=1788257220]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1263895865]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.19607843)
+
+[node name="Panel" type="Panel" parent="." unique_id=1849449141]
+custom_minimum_size = Vector2(436, 350)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("1_cmgah")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=210982111]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer" unique_id=2141278035]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="Panel/MarginContainer/VBoxContainer" unique_id=1986770631]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Shop"
+
+[node name="Space" type="Control" parent="Panel/MarginContainer/VBoxContainer" unique_id=919856979]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="Panel/MarginContainer/VBoxContainer" unique_id=310164667]
+layout_mode = 2
+columns = 5
+
+[node name="ShopButton" parent="Panel/MarginContainer/VBoxContainer/GridContainer" unique_id=1817372205 instance=ExtResource("2_kayea")]
+layout_mode = 2
+
+[node name="ShopButton2" parent="Panel/MarginContainer/VBoxContainer/GridContainer" unique_id=216592652 instance=ExtResource("2_kayea")]
+layout_mode = 2
+
+[node name="ShopButton3" parent="Panel/MarginContainer/VBoxContainer/GridContainer" unique_id=58222558 instance=ExtResource("2_kayea")]
+layout_mode = 2
+
+[node name="ShopButton4" parent="Panel/MarginContainer/VBoxContainer/GridContainer" unique_id=396541530 instance=ExtResource("2_kayea")]
+layout_mode = 2
+
+[node name="ShopButton5" parent="Panel/MarginContainer/VBoxContainer/GridContainer" unique_id=317185777 instance=ExtResource("2_kayea")]
+layout_mode = 2
+
+[node name="ShopButton6" parent="Panel/MarginContainer/VBoxContainer/GridContainer" unique_id=81466475 instance=ExtResource("2_kayea")]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer" unique_id=1498731253]
+layout_mode = 2
+size_flags_vertical = 10
+
+[node name="TextureRect" type="TextureRect" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=510039250]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture = ExtResource("3_f3lw8")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TotalCoins" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1184218853]
+layout_mode = 2
+text = "20"
