@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="NpcMovementResource" format=3 uid="uid://b2af170knrc3w"]
+
+[ext_resource type="Script" uid="uid://bkio077xnc1p1" path="res://entities/npc/resources/npc_movement_resourse.gd" id="1_bhpi8"]
+
+[resource]
+script = ExtResource("1_bhpi8")
+can_move = true
+metadata/_custom_type_script = "uid://bkio077xnc1p1"

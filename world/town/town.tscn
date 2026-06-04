@@ -22,6 +22,8 @@
 [ext_resource type="PackedScene" uid="uid://diq6bj8dow4s4" path="res://entities/enemies/common/enemy_spirit.tscn" id="21_pm63g"]
 [ext_resource type="PackedScene" uid="uid://chd1ctsb3etxc" path="res://entities/npc/people/npc_fighter_red.tscn" id="22_t2xh5"]
 [ext_resource type="PackedScene" uid="uid://c7bk0kcs6aw5o" path="res://entities/npc/people/npc_samurai.tscn" id="23_6ft51"]
+[ext_resource type="PackedScene" uid="uid://cfh1cjpcx427q" path="res://entities/npc/people/npc_knight_gold.tscn" id="23_n1kxh"]
+[ext_resource type="PackedScene" uid="uid://wlts28xhqv03" path="res://entities/npc/people/npc_sultan.tscn" id="24_8odcf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ib72w"]
 texture = ExtResource("3_yxohw")
@@ -1463,3 +1465,9 @@ position = Vector2(487, 285)
 
 [node name="NpcFighterRed" parent="Npc" unique_id=950152069 instance=ExtResource("22_t2xh5")]
 position = Vector2(657, 299)
+
+[node name="NpcKnightGold" parent="Npc" unique_id=1855484087 instance=ExtResource("23_n1kxh")]
+position = Vector2(584, 559)
+
+[node name="NpcSultan" parent="Npc" unique_id=216637894 instance=ExtResource("24_8odcf")]
+position = Vector2(725, 402)

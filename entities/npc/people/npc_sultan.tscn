@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://wlts28xhqv03"]
+
+[ext_resource type="PackedScene" uid="uid://cgretm070fsrv" path="res://entities/npc/npc.tscn" id="1_5qw6w"]
+[ext_resource type="Resource" uid="uid://cu1e6il0en6i3" path="res://entities/npc/people/npc_sultan_movement.tres" id="2_ugs0y"]
+[ext_resource type="Texture2D" uid="uid://gaxtnwqvjfcd" path="res://entities/npc/sprites/Sultan_SpriteSheet.png" id="2_vllfq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ugs0y"]
+atlas = ExtResource("2_vllfq")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o22fh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ugs0y")
+}],
+"loop": true,
+"name": &"idle_down",
+"speed": 5.0
+}]
+
+[node name="NpcSultan" unique_id=1029844729 instance=ExtResource("1_5qw6w")]
+movement = ExtResource("2_ugs0y")
+
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=733634769]
+sprite_frames = SubResource("SpriteFrames_o22fh")

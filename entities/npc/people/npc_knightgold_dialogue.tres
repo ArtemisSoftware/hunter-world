@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="DialogueResource" format=3 uid="uid://nm8mqqbdvkls"]
+
+[ext_resource type="Script" uid="uid://c06041b48hwav" path="res://dialogue/resource/dialogue_resource.gd" id="1_gawyy"]
+[ext_resource type="Texture2D" uid="uid://dtt7x5hkvpuwm" path="res://entities/npc/sprites/KnightGold_Faceset.png" id="2_xsn3s"]
+
+[resource]
+script = ExtResource("1_gawyy")
+speaker_name = "Gold Knight"
+speaker_icon = ExtResource("2_xsn3s")
+text = Array[String](["Hello, I have a quest for you"])
+metadata/_custom_type_script = "uid://c06041b48hwav"

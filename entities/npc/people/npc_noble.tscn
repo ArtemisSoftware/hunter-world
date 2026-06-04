@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://ch7dn7s3da2an"]
+
+[ext_resource type="PackedScene" uid="uid://cgretm070fsrv" path="res://entities/npc/npc.tscn" id="1_rlu22"]
+[ext_resource type="Resource" uid="uid://dxrmb7w8v2feq" path="res://entities/npc/people/npc_noble_movement.tres" id="2_1aoe1"]
+[ext_resource type="Texture2D" uid="uid://c5lv4cwmcrpq" path="res://entities/npc/sprites/Noble_SpriteSheet.png" id="2_8tro1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1aoe1"]
+atlas = ExtResource("2_8tro1")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x8t7m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1aoe1")
+}],
+"loop": true,
+"name": &"idle_down",
+"speed": 5.0
+}]
+
+[node name="NpcNoble" unique_id=1029844729 instance=ExtResource("1_rlu22")]
+movement = ExtResource("2_1aoe1")
+
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=733634769]
+sprite_frames = SubResource("SpriteFrames_x8t7m")
