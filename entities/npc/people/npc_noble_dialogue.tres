@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="DialogueResource" format=3 uid="uid://vy8l07ote7pe"]
+
+[ext_resource type="Script" uid="uid://c06041b48hwav" path="res://dialogue/resource/dialogue_resource.gd" id="1_qgn1j"]
+[ext_resource type="Texture2D" uid="uid://bp6cuwugmibpd" path="res://entities/npc/sprites/Noble_Faceset.png" id="2_75ibi"]
+
+[resource]
+script = ExtResource("1_qgn1j")
+speaker_name = "Noble shop keeper"
+speaker_icon = ExtResource("2_75ibi")
+text = Array[String](["Welcome to my shop!", "I hope you find something nice."])
+metadata/_custom_type_script = "uid://c06041b48hwav"

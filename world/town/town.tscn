@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://cfh1cjpcx427q" path="res://entities/npc/people/npc_knight_gold.tscn" id="23_n1kxh"]
 [ext_resource type="PackedScene" uid="uid://wlts28xhqv03" path="res://entities/npc/people/npc_sultan.tscn" id="24_8odcf"]
 [ext_resource type="PackedScene" uid="uid://bugasm7ih7v7" path="res://core/components/portal.tscn" id="24_n1kxh"]
+[ext_resource type="PackedScene" uid="uid://ch7dn7s3da2an" path="res://entities/npc/people/npc_noble.tscn" id="25_8odcf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mtj1y"]
 texture = ExtResource("4_v5jgd")
@@ -1027,3 +1028,8 @@ debug_color = Color(0, 0.6431373, 0.29803923, 0.41960785)
 
 [node name="PlayerShopExitPosition" type="Node2D" parent="Shops/Portals" unique_id=237283841]
 position = Vector2(440, 272)
+
+[node name="Npcs" type="Node" parent="Shops" unique_id=2142158416]
+
+[node name="NpcNoble" parent="Shops/Npcs" unique_id=2043026997 instance=ExtResource("25_8odcf")]
+position = Vector2(2503, 716)

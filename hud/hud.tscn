@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://bj31m6e3ixt6n" path="res://hud/loadout/skills_panel.tscn" id="14_lyvac"]
 [ext_resource type="PackedScene" uid="uid://bclukvvchgohb" path="res://hud/components/slot.tscn" id="17_02s75"]
 [ext_resource type="PackedScene" uid="uid://w67cj34ogylo" path="res://dialogue/dialogue_panel.tscn" id="18_put16"]
+[ext_resource type="PackedScene" uid="uid://b03plhdppqy5k" path="res://world/shops/shop_panel.tscn" id="19_0bw3r"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1kkc0"]
 bg_color = Color(0.14901961, 0.16470589, 0.20784314, 1)
@@ -227,6 +228,9 @@ mouse_filter = 2
 flat = true
 
 [node name="DialoguePanel" parent="." unique_id=669903239 instance=ExtResource("18_put16")]
+visible = false
+
+[node name="ShopPanel" parent="." unique_id=1788257220 instance=ExtResource("19_0bw3r")]
 visible = false
 
 [connection signal="pressed" from="LoadoutBar/MarginContainer/HBoxContainer/EquipmentButton" to="." method="_on_equipment_button_pressed"]

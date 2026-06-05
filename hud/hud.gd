@@ -6,6 +6,7 @@ class_name Hud extends CanvasLayer
 @onready var grabbed_slot: Slot = $GrabbedSlot
 
 @onready var skill_bar: Panel = $SkillBar
+@onready var shop_panel: Control = $ShopPanel
 
 
 func _ready() -> void:
@@ -39,6 +40,15 @@ func equip_skill_to_empty_slot(skill: SkillRes) -> void:
 			button.equip_skill(skill)
 			HudGlobal.skill_slots[index] = skill
 			return
+	pass
+
+
+func open_npc_panel(type: Npc.NpcType) -> void:
+	
+	match type:
+		Npc.NpcType.SHOP:
+			shop_panel.show()
+	
 	pass
 
 #---------------------

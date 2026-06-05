@@ -62,6 +62,14 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 		if dialogue:
 			DialogueGlobal.on_dialogue_started.emit(dialogue)
 			DialogueGlobal.is_active = true
+			
+			if type != NpcType.IDLE:
+				await DialogueGlobal.on_dialogue_finished
+				HudGlobal.hud.open_npc_panel(type)
+		else:
+			if type != NpcType.IDLE:
+				HudGlobal.hud.open_npc_panel(type)		
+				
 	pass # Replace with function body.
 
 func _set_new_target() -> void:
