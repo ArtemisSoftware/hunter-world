@@ -1,8 +1,26 @@
 [gd_scene format=3 uid="uid://b03plhdppqy5k"]
 
 [ext_resource type="StyleBox" uid="uid://wtrmw47lhv4e" path="res://hud/styles/loadout_panel_style.tres" id="1_cmgah"]
+[ext_resource type="Script" uid="uid://dml1dctxkfhcm" path="res://world/shops/shop_panel.gd" id="1_m54f8"]
 [ext_resource type="PackedScene" uid="uid://dhf6xr3tkg8x" path="res://world/shops/components/shop_button.tscn" id="2_kayea"]
+[ext_resource type="Script" uid="uid://cp07ve1pp41uq" path="res://data/item/item_res.gd" id="2_lnwg3"]
+[ext_resource type="Resource" uid="uid://tsn608ld0afw" path="res://data/food/fish.tres" id="3_1lkax"]
 [ext_resource type="Texture2D" uid="uid://brkbxbilm54kt" path="res://hud/sprites/GoldCoin.png" id="3_f3lw8"]
+[ext_resource type="Resource" uid="uid://dmpced4tf7udh" path="res://data/equipment/legs_common.tres" id="4_472rk"]
+[ext_resource type="Resource" uid="uid://clxuwry5ewf15" path="res://data/food/honey.tres" id="5_et2ma"]
+[ext_resource type="Resource" uid="uid://cnhathoc7pkm3" path="res://data/potions/hp_potion.tres" id="6_u15nc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lnwg3"]
+bg_color = Color(0.7254902, 0.17254902, 0.1882353, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.3529412, 0.050980393, 0.047058824, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 
 [node name="ShopPanel" type="Control" unique_id=1788257220]
 layout_mode = 3
@@ -11,6 +29,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_m54f8")
+items = Array[ExtResource("2_lnwg3")]([ExtResource("3_1lkax"), ExtResource("4_472rk"), ExtResource("5_et2ma"), ExtResource("6_u15nc")])
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1263895865]
 layout_mode = 1
@@ -97,3 +117,16 @@ stretch_mode = 5
 [node name="TotalCoins" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1184218853]
 layout_mode = 2
 text = "20"
+
+[node name="CloseButton" type="Button" parent="." unique_id=1615748826]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 0
+offset_left = 873.0
+offset_top = 186.0
+offset_right = 908.0
+offset_bottom = 221.0
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_lnwg3")
+text = "X"
+
+[connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]

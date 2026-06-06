@@ -25,6 +25,7 @@ HudGlobal="*uid://bbwnbyajvgfdu"
 DialogueGlobal="*uid://chjx80b8rfjuc"
 NpcGlobal="*uid://butxvr2m1ninw"
 Transition="*uid://dqoe4lx2di648"
+ShopGlobal="*uid://7romhbfa4loi"
 
 [display]
 

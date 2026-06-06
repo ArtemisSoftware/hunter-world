@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dhf6xr3tkg8x"]
 
 [ext_resource type="Texture2D" uid="uid://brkbxbilm54kt" path="res://hud/sprites/GoldCoin.png" id="1_6ea1w"]
+[ext_resource type="Script" uid="uid://pmd3lplbvkxk" path="res://world/shops/components/shop_button.gd" id="1_xuv4u"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kayea"]
 bg_color = Color(0.21960784, 0.23137255, 0.2509804, 1)
@@ -43,6 +44,7 @@ custom_minimum_size = Vector2(80, 80)
 theme_override_styles/normal = SubResource("StyleBoxFlat_kayea")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_xuv4u")
 theme_override_styles/hover = SubResource("StyleBoxFlat_exani")
+script = ExtResource("1_xuv4u")
 
 [node name="ItemIcon" type="TextureRect" parent="." unique_id=1743091767]
 layout_mode = 1
@@ -77,6 +79,8 @@ texture = ExtResource("1_6ea1w")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="HBoxContainer" unique_id=1555138636]
+[node name="Price" type="Label" parent="HBoxContainer" unique_id=1555138636]
 layout_mode = 2
 text = "20"
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
