@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="RecipeResource" format=3 uid="uid://cl7lyroyn50v7"]
+
+[ext_resource type="Resource" uid="uid://duf66fd2lk8q6" path="res://data/potions/medipack.tres" id="1_1kelj"]
+[ext_resource type="Script" uid="uid://coinvqyf0ebr1" path="res://data/craft/recipe_material_resource.gd" id="1_fu6a2"]
+[ext_resource type="Script" uid="uid://deveotkyofvuh" path="res://data/craft/recipe_resource.gd" id="1_s85ut"]
+[ext_resource type="Resource" uid="uid://cnhathoc7pkm3" path="res://data/potions/hp_potion.tres" id="3_ixea8"]
+[ext_resource type="Resource" uid="uid://dgpq7ocveivio" path="res://data/food/nut.tres" id="4_nxxl8"]
+
+[sub_resource type="Resource" id="Resource_6bbrn"]
+script = ExtResource("1_fu6a2")
+item = ExtResource("3_ixea8")
+amount = 2
+metadata/_custom_type_script = "uid://coinvqyf0ebr1"
+
+[sub_resource type="Resource" id="Resource_mn6dp"]
+script = ExtResource("1_fu6a2")
+item = ExtResource("4_nxxl8")
+amount = 1
+metadata/_custom_type_script = "uid://coinvqyf0ebr1"
+
+[resource]
+script = ExtResource("1_s85ut")
+crafted_item = ExtResource("1_1kelj")
+recipe_materials = Array[ExtResource("1_fu6a2")]([SubResource("Resource_6bbrn"), SubResource("Resource_mn6dp")])
+metadata/_custom_type_script = "uid://deveotkyofvuh"
