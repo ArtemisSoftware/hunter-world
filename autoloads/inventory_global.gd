@@ -63,6 +63,15 @@ func _find_item_indexes(item: ItemRes, with_space: bool = false) -> Array[int]:
 	return found
 	pass	
 	
+	
+func count_item(item: ItemRes) -> int:
+	var total: int = 0
+	for slot in inventory:
+		if slot and slot.item == item:
+			total += slot.quantity
+	
+	return total			
+	pass
 #endregion	
 
 #region add / remove
