@@ -86,5 +86,6 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 func _on_health_on_death() -> void:
 	_drop_loot()
 	EventBus.player.exp.add_exp(stats.exp_amount)
+	QuestGlobal.on_quest_progress_updated.emit("1",1)
 	queue_free()
 	pass # Replace with function body.

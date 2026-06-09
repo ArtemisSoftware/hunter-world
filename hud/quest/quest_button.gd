@@ -23,8 +23,8 @@ func _on_quest_progress_updated(id: String, amount: int) -> void:
 	
 func setup(quest: QuestResource) -> void:
 	self.quest = quest
-	self.quest.name = quest.name
-	self.quest.description = quest.description
+	quest_name.text = quest.name
+	quest_description.text = quest.description
 	reward_icon.texture = quest.reward.icon
 	_update_progress()
 	pass	

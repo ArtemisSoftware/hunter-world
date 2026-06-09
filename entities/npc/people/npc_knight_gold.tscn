@@ -189,6 +189,7 @@ animations = [{
 }]
 
 [node name="NpcKnightGold" unique_id=1029844729 instance=ExtResource("1_hlen2")]
+type = 2
 movement = ExtResource("2_y7862")
 dialogue = ExtResource("3_qexrh")
 

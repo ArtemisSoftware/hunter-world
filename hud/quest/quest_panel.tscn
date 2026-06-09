@@ -1,10 +1,23 @@
 [gd_scene format=3 uid="uid://bvrto3ifh3kyx"]
 
 [ext_resource type="StyleBox" uid="uid://wtrmw47lhv4e" path="res://hud/styles/loadout_panel_style.tres" id="1_e1rty"]
-[ext_resource type="PackedScene" uid="uid://ce5vyak4d6mdb" path="res://hud/quest/quest_button.tscn" id="2_xcccv"]
+[ext_resource type="Script" uid="uid://dcpcaw6ktrgl5" path="res://hud/quest/quest_panel.gd" id="1_xcccv"]
+[ext_resource type="Resource" uid="uid://dtejo33417qeh" path="res://data/quest/quest_01.tres" id="2_5sqyk"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_xcccv"]
 font_size = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5sqyk"]
+bg_color = Color(0.7254902, 0.17254902, 0.1882353, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.3529412, 0.050980393, 0.047058824, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 
 [node name="QuestPanel" type="Control" unique_id=400035067]
 layout_mode = 3
@@ -13,6 +26,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_xcccv")
+quests = Array[Object]([ExtResource("2_5sqyk")])
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1647583185]
 layout_mode = 1
@@ -69,8 +84,18 @@ custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer" unique_id=24311808]
+[node name="QuestContainer" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer" unique_id=24311808]
 layout_mode = 2
 
-[node name="QuestButton" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=145621018 instance=ExtResource("2_xcccv")]
-layout_mode = 2
+[node name="CloseButton" type="Button" parent="." unique_id=266971344]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 0
+offset_left = 809.0
+offset_top = 113.0
+offset_right = 849.0
+offset_bottom = 155.0
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_5sqyk")
+text = "X"
+
+[connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]

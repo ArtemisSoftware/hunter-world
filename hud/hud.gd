@@ -8,6 +8,7 @@ class_name Hud extends CanvasLayer
 @onready var skill_bar: Panel = $SkillBar
 @onready var shop_panel: Control = $ShopPanel
 @onready var craft_panel: CraftPanel = $CraftPanel
+@onready var quest_panel: QuestPanel = $QuestPanel
 
 
 func _ready() -> void:
@@ -51,7 +52,8 @@ func open_npc_panel(type: Npc.NpcType) -> void:
 			shop_panel.show()
 		Npc.NpcType.CRAFTING:
 			craft_panel.show()	
-	
+		Npc.NpcType.QUEST:
+			quest_panel.show()
 	pass
 
 #---------------------

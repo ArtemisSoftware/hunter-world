@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://cxcprvyvmakar" path="res://entities/enemies/common/enemy_mouse.tscn" id="20_t2xh5"]
 [ext_resource type="PackedScene" uid="uid://diq6bj8dow4s4" path="res://entities/enemies/common/enemy_spirit.tscn" id="21_pm63g"]
 [ext_resource type="Texture2D" uid="uid://cwk607dmcubr6" path="res://world/sprites/TilesetWallSimple.png" id="22_6ft51"]
+[ext_resource type="Script" uid="uid://bkio077xnc1p1" path="res://entities/npc/resources/npc_movement_resourse.gd" id="22_du6ue"]
 [ext_resource type="PackedScene" uid="uid://chd1ctsb3etxc" path="res://entities/npc/people/npc_fighter_red.tscn" id="22_t2xh5"]
 [ext_resource type="PackedScene" uid="uid://c7bk0kcs6aw5o" path="res://entities/npc/people/npc_samurai.tscn" id="23_6ft51"]
 [ext_resource type="PackedScene" uid="uid://cfh1cjpcx427q" path="res://entities/npc/people/npc_knight_gold.tscn" id="23_n1kxh"]
@@ -784,6 +785,10 @@ physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 2
 sources/0 = SubResource("TileSetAtlasSource_mtj1y")
 
+[sub_resource type="Resource" id="Resource_gonhh"]
+script = ExtResource("22_du6ue")
+metadata/_custom_type_script = "uid://bkio077xnc1p1"
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n1kxh"]
 texture = ExtResource("22_6ft51")
 0:0/0 = 0
@@ -985,7 +990,8 @@ position = Vector2(487, 285)
 position = Vector2(657, 299)
 
 [node name="NpcKnightGold" parent="Npc" unique_id=1855484087 instance=ExtResource("23_n1kxh")]
-position = Vector2(584, 559)
+position = Vector2(638, 105)
+movement = SubResource("Resource_gonhh")
 
 [node name="NpcSultan" parent="Npc" unique_id=216637894 instance=ExtResource("24_8odcf")]
 position = Vector2(725, 402)

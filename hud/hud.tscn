@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://w67cj34ogylo" path="res://dialogue/dialogue_panel.tscn" id="18_put16"]
 [ext_resource type="PackedScene" uid="uid://b03plhdppqy5k" path="res://world/shops/shop_panel.tscn" id="19_0bw3r"]
 [ext_resource type="PackedScene" uid="uid://v5t2m5diu86o" path="res://hud/craft/craft_panel.tscn" id="20_lfqsj"]
+[ext_resource type="PackedScene" uid="uid://bvrto3ifh3kyx" path="res://hud/quest/quest_panel.tscn" id="21_lyvac"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1kkc0"]
 bg_color = Color(0.14901961, 0.16470589, 0.20784314, 1)
@@ -235,6 +236,9 @@ visible = false
 visible = false
 
 [node name="CraftPanel" parent="." unique_id=487600800 instance=ExtResource("20_lfqsj")]
+visible = false
+
+[node name="QuestPanel" parent="." unique_id=400035067 instance=ExtResource("21_lyvac")]
 visible = false
 
 [connection signal="pressed" from="LoadoutBar/MarginContainer/HBoxContainer/EquipmentButton" to="." method="_on_equipment_button_pressed"]

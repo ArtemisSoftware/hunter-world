@@ -9,5 +9,5 @@ id = "1"
 name = "Kill the furry thieves"
 description = "Kill 10 squirrels"
 reward = ExtResource("1_edjtm")
-target_value = 10
+target_value = 1
 metadata/_custom_type_script = "uid://bmfh1oya8rslf"
