@@ -117,6 +117,29 @@ func get_slot(index: int) -> SlotRes:
 	return null
 	pass	
 
+
+func remove_item(item: ItemRes, amount: int) -> void:
+	var remaining = amount
+	
+	var slots = _find_item_indexes(item)
+	slots.reverse()
+	
+	for index in slots:
+		if remaining <= 0:
+			break
+			
+		var slot: SlotRes = inventory[index]
+		var take  = min(slot.quantity, remaining)
+		slot.quantity -= take
+		remaining -= take
+		
+		if slot.quantity <= 0:
+			inventory[index] = null
+			
+	var removed = amount - remaining
+	if removed > 0:
+		on_inventory_changed.emit() 			
+
 #endregion
 
 #region move slots

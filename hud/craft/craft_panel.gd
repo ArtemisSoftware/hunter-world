@@ -23,6 +23,10 @@ class_name CraftPanel extends Control
 
 var amount_selected: int = 1
 var button_selected: CraftButton
+var material_1: RecipeMaterialResource
+var material_1_requirement: int
+var material_2: RecipeMaterialResource
+var material_2_requirement: int
 
 
 func _ready() -> void:
@@ -50,23 +54,23 @@ func _update_material_information() -> void:
 	recipe_name.text = button_selected.recipe.crafted_item.name
 	amount.text = str(amount_selected)
 	
-	var material_1 = button_selected.recipe.recipe_materials[0]
+	material_1 = button_selected.recipe.recipe_materials[0]
 	material_icon.texture = material_1.item.icon
 	material_name.text = material_1.item.name
 	
-	var required_1: int = material_1.amount * amount_selected
+	material_1_requirement = material_1.amount * amount_selected
 	
-	needed.text = str(required_1)
+	needed.text = str(material_1_requirement)
 	available.text = str(InventoryGlobal.count_item(material_1.item))
 	
 	
-	var material_2 = button_selected.recipe.recipe_materials[1]
+	material_2 = button_selected.recipe.recipe_materials[1]
 	material_2_icon.texture = material_2.item.icon
 	material_2_name.text = material_2.item.name
 	
-	var required_2: int = material_2.amount * amount_selected
+	material_2_requirement = material_2.amount * amount_selected
 	
-	needed_2.text = str(required_2)
+	needed_2.text = str(material_2_requirement)
 	available_2.text = str(InventoryGlobal.count_item(material_2.item))
 	
 	pass	
@@ -81,6 +85,13 @@ func _on_button_pressed(craft_button: CraftButton) -> void:
 	_update_material_information()
 	pass
 
+
+func _can_craft_recipe() -> bool:
+	
+	return InventoryGlobal.count_item(material_1.item) >= material_1_requirement and InventoryGlobal.count_item(material_2.item) >= material_2_requirement
+		
+	pass 
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
@@ -88,5 +99,30 @@ func _process(delta: float) -> void:
 
 func _on_close_button_pressed() -> void:
 	hide()
-	available_recipies.hide()
+	materials.hide()
+	#available_recipies.hide()
+	pass # Replace with function body.
+
+
+func _on_remove_button_pressed() -> void:
+	amount_selected -= 1
+	amount_selected = max(1, amount_selected)
+	_update_material_information()
+	pass # Replace with function body.
+
+
+func _on_add_button_pressed() -> void:
+	amount_selected += 1
+	_update_material_information()
+	pass # Replace with function body.
+
+
+func _on_craft_button_pressed() -> void:
+	if _can_craft_recipe():
+		InventoryGlobal.remove_item(material_1.item, material_1_requirement)
+		InventoryGlobal.remove_item(material_2.item, material_2_requirement)
+		InventoryGlobal.add_item(button_selected.recipe.crafted_item, amount_selected)
+		
+		amount_selected = 1
+		_update_material_information()
 	pass # Replace with function body.

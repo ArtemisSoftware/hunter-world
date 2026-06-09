@@ -20,6 +20,7 @@ animations = [{
 }]
 
 [node name="NpcSultan" unique_id=1029844729 instance=ExtResource("1_5qw6w")]
+type = 3
 movement = ExtResource("2_ugs0y")
 
 [node name="AnimatedSprite2D" parent="." index="1" unique_id=733634769]
