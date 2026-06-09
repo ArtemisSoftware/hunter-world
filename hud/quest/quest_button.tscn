@@ -111,3 +111,5 @@ label_settings = SubResource("LabelSettings_rsjak")
 [node name="Complete" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1870200348]
 layout_mode = 2
 label_settings = SubResource("LabelSettings_qp45r")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
