@@ -14,6 +14,10 @@ config/name="Hunter-World"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://dhpo5i2a6iyq3"
+
 [autoload]
 
 EventBus="*uid://c22powuarquxk"
@@ -28,6 +32,7 @@ Transition="*uid://dqoe4lx2di648"
 ShopGlobal="*uid://7romhbfa4loi"
 CraftGlobal="*uid://ddo1avwnob7sh"
 QuestGlobal="*uid://pnldnuv3qwkg"
+SoundManager="*uid://ehumqldutgjj"
 
 [display]
 

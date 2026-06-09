@@ -46,5 +46,6 @@ func _process(delta: float) -> void:
 func _on_pressed() -> void:
 	if current_progress >= quest.target_value:
 		InventoryGlobal.add_item(quest.reward)
+		SoundManager.play(Sound.BUTTON)
 		queue_free()
 	pass # Replace with function body.

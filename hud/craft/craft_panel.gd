@@ -83,6 +83,7 @@ func _on_button_pressed(craft_button: CraftButton) -> void:
 	button_selected = craft_button
 	amount_selected = 1
 	_update_material_information()
+	SoundManager.play(Sound.BUTTON)
 	pass
 
 
@@ -100,6 +101,7 @@ func _process(delta: float) -> void:
 func _on_close_button_pressed() -> void:
 	hide()
 	materials.hide()
+	SoundManager.play(Sound.BUTTON)
 	#available_recipies.hide()
 	pass # Replace with function body.
 
@@ -108,12 +110,14 @@ func _on_remove_button_pressed() -> void:
 	amount_selected -= 1
 	amount_selected = max(1, amount_selected)
 	_update_material_information()
+	SoundManager.play(Sound.BUTTON)
 	pass # Replace with function body.
 
 
 func _on_add_button_pressed() -> void:
 	amount_selected += 1
 	_update_material_information()
+	SoundManager.play(Sound.BUTTON)
 	pass # Replace with function body.
 
 
@@ -125,4 +129,5 @@ func _on_craft_button_pressed() -> void:
 		
 		amount_selected = 1
 		_update_material_information()
+	SoundManager.play(Sound.BUTTON)
 	pass # Replace with function body.

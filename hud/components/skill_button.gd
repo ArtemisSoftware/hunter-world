@@ -38,6 +38,7 @@ func _process(delta: float) -> void:
 
 func _on_pressed() -> void:
 	
+	SoundManager.play(Sound.BUTTON)
 	if not is_unlocked:
 		if EventBus.coins >= skill.price:
 			EventBus.coins -= skill.price

@@ -34,4 +34,5 @@ func apply_damage() -> void:
 		EventBus.player.health.take_damage(enemy.stats.damage)
 		EffectsGlobal.create_damage_fx(EventBus.player.global_position)
 		EffectsGlobal.create_damage_text(EventBus.player.global_position, enemy.stats.damage)
+		SoundManager.play(Sound.IMPACT)
 	pass	

@@ -42,5 +42,6 @@ func _shine() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	InventoryGlobal.add_item(item)
+	SoundManager.play(Sound.PICKUP)
 	queue_free()
 	pass

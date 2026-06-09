@@ -62,19 +62,24 @@ func open_npc_panel(type: Npc.NpcType) -> void:
 
 func _on_equipment_button_pressed() -> void:
 	loadout.toggle_equipment()
+	
+	SoundManager.play(Sound.BUTTON)
 	pass 
 
 
 func _on_inventory_button_pressed() -> void:
 	loadout.toggle_inventory()
+	SoundManager.play(Sound.BUTTON)
 	pass 
 
 
 func _on_stats_button_pressed() -> void:
 	loadout.toggle_stats()
+	SoundManager.play(Sound.BUTTON)
 	pass 
 
 
 func _on_skills_button_pressed() -> void:
 	loadout.toggle_skills()
+	SoundManager.play(Sound.BUTTON)
 	pass 
