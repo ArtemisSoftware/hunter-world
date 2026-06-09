@@ -1,0 +1,113 @@
+[gd_scene format=3 uid="uid://ce5vyak4d6mdb"]
+
+[ext_resource type="Script" uid="uid://cnlpk4fbw0uio" path="res://hud/quest/quest_button.gd" id="1_md7wi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_md7wi"]
+bg_color = Color(0.654902, 0.40784314, 0.2901961, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7sxw8"]
+bg_color = Color(0.37784764, 0.21957225, 0.14361459, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lgjfi"]
+bg_color = Color(0.8647134, 0.62616843, 0.5154527, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="LabelSettings" id="LabelSettings_7sxw8"]
+font_size = 14
+
+[sub_resource type="LabelSettings" id="LabelSettings_lgjfi"]
+font_size = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_m8f4p"]
+font_size = 12
+
+[sub_resource type="LabelSettings" id="LabelSettings_pxkt5"]
+font_size = 12
+
+[sub_resource type="LabelSettings" id="LabelSettings_rsjak"]
+font_size = 12
+
+[sub_resource type="LabelSettings" id="LabelSettings_qp45r"]
+font_size = 12
+
+[node name="QuestButton" type="Button" unique_id=145621018]
+custom_minimum_size = Vector2(270, 90)
+theme_override_styles/normal = SubResource("StyleBoxFlat_md7wi")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7sxw8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lgjfi")
+script = ExtResource("1_md7wi")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1178415552]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=904983808]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=378031237]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=137014536]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="QuestName" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1277750177]
+layout_mode = 2
+text = "Name"
+label_settings = SubResource("LabelSettings_7sxw8")
+
+[node name="QuestDescription" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=659717348]
+layout_mode = 2
+text = "Description"
+label_settings = SubResource("LabelSettings_lgjfi")
+autowrap_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1314113820]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=593963950]
+layout_mode = 2
+text = "Reward"
+label_settings = SubResource("LabelSettings_m8f4p")
+
+[node name="RewardIcon" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1909095164]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=47571153]
+layout_mode = 2
+alignment = 1
+
+[node name="Progress" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=2132058853]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_pxkt5")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=806860016]
+layout_mode = 2
+text = "/"
+label_settings = SubResource("LabelSettings_rsjak")
+
+[node name="Complete" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1870200348]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_qp45r")
